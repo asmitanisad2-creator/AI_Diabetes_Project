@@ -1,0 +1,822 @@
+/* =====================================================
+   AI DIABETES PREDICTOR
+   HOME PAGE CSS
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f8fc;
+    color:#333;
+    line-height:1.7;
+    transition:.4s;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 80px;
+
+    background:#ffffff;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+}
+
+.logo a{
+
+    text-decoration:none;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1565C0;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-menu a{
+
+    text-decoration:none;
+
+    color:#444;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#1565C0;
+
+}
+
+.nav-menu .active{
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.start-btn{
+
+    text-decoration:none;
+
+    background:#1565C0;
+
+    color:white;
+
+    padding:11px 24px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.start-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+.login-btn{
+
+    text-decoration:none;
+
+    border:2px solid #1565C0;
+
+    color:#1565C0;
+
+    padding:10px 24px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#1565C0;
+
+    color:white;
+
+}
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    background:#1565C0;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:rotate(180deg);
+
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:90px 80px;
+
+    gap:70px;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:#E3F2FD;
+
+    color:#1565C0;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    font-size:52px;
+
+    color:#0D47A1;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-btn{
+
+    text-decoration:none;
+
+    background:#1565C0;
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:#1565C0;
+
+    border:2px solid #1565C0;
+
+}
+
+.secondary-btn:hover{
+
+    background:#1565C0;
+
+    color:white;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.hero-image img{
+
+    width:470px;
+
+    max-width:100%;
+
+}
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+.features,
+.health-tips,
+.about-home{
+
+    padding:90px 80px;
+
+}
+
+.features h2,
+.health-tips h2,
+.about-home h2{
+
+    text-align:center;
+
+    font-size:38px;
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:17px;
+
+    margin-bottom:50px;
+
+}
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+
+.feature-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.feature-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(21,101,192,.18);
+
+}
+
+.feature-icon{
+
+    font-size:50px;
+
+    margin-bottom:18px;
+
+}
+
+.feature-card h3{
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+}
+
+/* =====================================================
+   HEALTH TIPS
+===================================================== */
+
+.tips-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.tip-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.tip-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.tip-card h3{
+
+    color:#1565C0;
+
+    margin-bottom:12px;
+
+}
+
+.tip-card p{
+
+    color:#666;
+
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-home{
+
+    background:#ffffff;
+
+}
+
+.about-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.about-content p{
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-top:20px;
+
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    background:linear-gradient(135deg,#1565C0,#0D47A1);
+
+    color:white;
+
+    text-align:center;
+
+    padding:90px 30px;
+
+}
+
+.cta h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+    color:#f2f2f2;
+
+}
+
+.cta .secondary-btn{
+
+    background:white;
+
+    color:#1565C0;
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#0D1B2A;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.footer-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.footer-content h3{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-content hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#3d4d63;
+
+    margin:25px 0;
+
+}
+
+.footer-content p{
+
+    color:#d6d6d6;
+
+    margin:8px 0;
+
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode{
+
+    background:#121212;
+
+    color:white;
+
+}
+
+body.dark-mode .navbar{
+
+    background:#1c1c1c;
+
+}
+
+body.dark-mode .logo a,
+
+body.dark-mode .nav-menu a{
+
+    color:white;
+
+}
+
+body.dark-mode .feature-card,
+
+body.dark-mode .tip-card,
+
+body.dark-mode .about-home{
+
+    background:#1f1f1f;
+
+    color:white;
+
+}
+
+body.dark-mode .feature-card p,
+
+body.dark-mode .tip-card p,
+
+body.dark-mode .about-content p,
+
+body.dark-mode .section-subtitle,
+
+body.dark-mode .hero-content p{
+
+    color:#dddddd;
+
+}
+
+body.dark-mode .badge{
+
+    background:#0D47A1;
+
+    color:white;
+
+}
+
+body.dark-mode .hero h1,
+
+body.dark-mode h2,
+
+body.dark-mode h3{
+
+    color:white;
+
+}
+
+body.dark-mode footer{
+
+    background:#000;
+
+}
+
+body.dark-mode .secondary-btn{
+
+    background:#222;
+
+    color:white;
+
+    border:2px solid white;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-content{
+
+    order:2;
+
+}
+
+.hero-image{
+
+    order:1;
+
+}
+
+.hero-image img{
+
+    width:350px;
+
+}
+
+.navbar{
+
+    padding:20px;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-menu{
+
+    width:100%;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.nav-right{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    padding:60px 25px;
+
+}
+
+.features,
+
+.health-tips,
+
+.about-home{
+
+    padding:70px 25px;
+
+}
+
+.hero-content h1{
+
+    font-size:38px;
+
+}
+
+.cta h2{
+
+    font-size:30px;
+
+}
+
+.footer-content h3{
+
+    font-size:24px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hero-image img{
+
+    width:260px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.hero-btn{
+
+    width:100%;
+
+}
+
+.start-btn,
+
+.login-btn{
+
+    padding:10px 18px;
+
+}
+
+}

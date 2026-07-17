@@ -1,0 +1,819 @@
+/* ==========================================
+   Welcome Banner
+========================================== */
+
+.welcome-banner{
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(37,99,235,.20);
+
+}
+
+.welcome-banner h2{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+
+}
+
+.welcome-banner p{
+
+    max-width:600px;
+
+    opacity:.95;
+
+    line-height:1.7;
+
+}
+
+.welcome-icon{
+
+    width:90px;
+
+    height:90px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+}
+
+/* ==========================================
+   Summary Cards
+========================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.summary-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.summary-card h3{
+
+    color:#64748B;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+}
+
+.summary-card h1{
+
+    color:#1E293B;
+
+    font-size:34px;
+
+}
+
+.summary-card span{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+}
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.blue{
+
+    background:#2563EB;
+
+}
+
+.green{
+
+    background:#16A34A;
+
+}
+
+.red{
+
+    background:#DC2626;
+
+}
+
+/* ==========================================
+   New Prediction Card
+========================================== */
+
+.new-prediction-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.new-prediction-card h2{
+
+    color:#1E293B;
+
+    margin-bottom:10px;
+
+}
+
+.new-prediction-card p{
+
+    color:#64748B;
+
+    max-width:550px;
+
+}
+/* ==========================================
+   Latest Health Status
+========================================== */
+
+.latest-status{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.status-header{
+
+    margin-bottom:25px;
+
+}
+
+.status-header h2{
+
+    color:#1E293B;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.status-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.status-result{
+
+    text-align:center;
+
+}
+
+.status-badge{
+
+    display:inline-block;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.status-badge.healthy{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.status-badge.danger{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+.status-details{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.detail-box{
+
+    background:#F8FAFC;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.detail-box h4{
+
+    color:#64748B;
+
+    margin-bottom:10px;
+
+}
+
+.detail-box p{
+
+    color:#1E293B;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.recommendation{
+
+    background:#EFF6FF;
+
+    border-left:5px solid #2563EB;
+
+    padding:20px;
+
+    border-radius:12px;
+
+}
+
+.recommendation h3{
+
+    margin-bottom:10px;
+
+    color:#2563EB;
+
+}
+
+.empty-status{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+.empty-status i{
+
+    font-size:60px;
+
+    color:#2563EB;
+
+    margin-bottom:20px;
+
+}
+
+.empty-status h3{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   Recent Reports
+========================================== */
+
+.recent-reports{
+
+    margin-bottom:30px;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.section-header h2{
+
+    color:#1E293B;
+
+}
+
+.view-all{
+
+    text-decoration:none;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+.status{
+
+    padding:8px 18px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.status.healthy{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.status.danger{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+.view-btn{
+
+    color:#2563EB;
+
+    font-size:18px;
+
+    text-decoration:none;
+
+}
+
+.empty{
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+/* ==========================================
+   Health Tips
+========================================== */
+
+.health-tips{
+
+    margin-bottom:20px;
+
+}
+
+.health-tips h2{
+
+    margin-bottom:20px;
+
+    color:#1E293B;
+
+}
+
+.tips{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.tip{
+
+    background:#F8FAFC;
+
+    border-left:5px solid #2563EB;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.tip:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+.welcome-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:20px;
+
+}
+
+.new-prediction-card{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+
+}
+
+.status-details{
+
+    grid-template-columns:1fr;
+
+}
+
+.section-header{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+}
+
+/* ==========================
+   Patient Profile Card
+========================== */
+
+.profile-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    flex-wrap:wrap;
+
+}
+
+.profile-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.profile-avatar{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+}
+
+.profile-left h2{
+
+    margin-bottom:5px;
+
+    color:#1E293B;
+
+}
+
+.profile-left p{
+
+    color:#64748B;
+
+}
+
+.profile-right{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:15px;
+
+}
+
+.profile-box{
+
+    background:#F8FAFC;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    min-width:140px;
+
+}
+
+.profile-box h4{
+
+    color:#64748B;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.profile-box p{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#1E293B;
+
+}
+
+.healthy-text{
+
+    color:#16A34A;
+
+    font-weight:600;
+
+}
+
+.danger-text{
+
+    color:#DC2626;
+
+    font-weight:600;
+
+}
+/* ==========================
+   Recent Reports Table
+========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+thead th{
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+tbody td{
+
+    padding:16px;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+.report-btn{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.report-btn:hover{
+
+    background:#1D4ED8;
+
+}
+/* Patient Email */
+
+.user-email{
+
+    font-size:13px;
+    font-weight:500;
+    color:#ffffff;
+
+    max-width:220px;
+
+    margin:10px auto;
+
+    display:block;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+}
+/* ===========================
+Charts
+=========================== */
+
+.charts-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:25px;
+
+margin:35px 0;
+
+}
+
+.chart-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.chart-card h2{
+
+margin-bottom:20px;
+
+color:#1E3A8A;
+
+font-size:22px;
+
+}
+
+.chart-card canvas{
+
+max-height:320px;
+
+}
+
+@media(max-width:900px){
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

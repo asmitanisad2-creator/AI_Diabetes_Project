@@ -1,0 +1,371 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Diabetes Predictor</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'js/theme.js' %}" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <a href="{% url 'home' %}">
+            🩺 AI Diabetes Predictor
+        </a>
+
+    </div>
+
+    <ul class="nav-menu">
+
+        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+
+        <li><a href="{% url 'about' %}">About</a></li>
+
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+
+    </ul>
+
+    <div class="nav-right">
+
+        <button
+            id="themeButton"
+            class="theme-btn"
+            onclick="toggleTheme()">
+
+            🌙
+
+        </button>
+
+        <a href="{% url 'login' %}" class="login-btn">
+
+            Login
+
+        </a>
+
+        <a href="{% url 'register' %}" class="start-btn">
+
+            Register
+
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+
+            AI Powered Healthcare
+
+        </span>
+
+        <h1>
+
+            Predict Diabetes Risk
+            with Artificial Intelligence
+
+        </h1>
+
+        <p>
+
+            AI Diabetes Predictor is a secure healthcare application
+            that helps estimate diabetes risk using Artificial
+            Intelligence and Machine Learning.
+
+            Create your account to receive a quick and reliable
+            diabetes risk assessment.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'register' %}" class="hero-btn">
+
+                Create Account
+
+            </a>
+
+            <a href="{% url 'login' %}" class="hero-btn secondary-btn">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="{% static 'images/doctor.png' %}"
+            alt="Healthcare Illustration">
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="features">
+
+    <h2>
+
+        Why Choose AI Diabetes Predictor?
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Fast, secure and intelligent diabetes risk assessment.
+
+    </p>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🤖
+
+            </div>
+
+            <h3>
+
+                AI Prediction
+
+            </h3>
+
+            <p>
+
+                Machine Learning analyzes your health data
+                to estimate diabetes risk quickly and accurately.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🔒
+
+            </div>
+
+            <h3>
+
+                Secure Data
+
+            </h3>
+
+            <p>
+
+                Your health information remains confidential
+                and is used only for prediction purposes.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                ⚡
+
+            </div>
+
+            <h3>
+
+                Instant Results
+
+            </h3>
+
+            <p>
+
+                Get your diabetes prediction within seconds
+                after submitting your health details.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= HEALTH TIPS ================= -->
+
+<section class="health-tips">
+
+    <h2>Healthy Lifestyle Tips</h2>
+
+    <p class="section-subtitle">
+        Small daily habits can help reduce the risk of diabetes and improve overall health.
+    </p>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+            <div class="tip-icon">🥗</div>
+            <h3>Healthy Diet</h3>
+            <p>
+                Eat balanced meals rich in vegetables, fruits, whole grains and lean protein.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🏃</div>
+            <h3>Stay Active</h3>
+            <p>
+                Exercise for at least 30 minutes daily to maintain a healthy lifestyle.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💧</div>
+            <h3>Stay Hydrated</h3>
+            <p>
+                Drink plenty of water throughout the day and reduce sugary beverages.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">😴</div>
+            <h3>Good Sleep</h3>
+            <p>
+                Get 7–8 hours of quality sleep every night for better overall health.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-home">
+
+    <div class="about-content">
+
+        <h2>About AI Diabetes Predictor</h2>
+
+        <p>
+
+            AI Diabetes Predictor is a web-based healthcare application
+            developed to estimate diabetes risk using Artificial Intelligence
+            and Machine Learning.
+
+        </p>
+
+        <p>
+
+            The system provides a quick, secure and user-friendly
+            prediction based on basic health parameters. It is intended
+            to support early health awareness and encourage timely
+            medical consultation.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+    <h2>
+
+        Ready to Check Your Diabetes Risk?
+
+    </h2>
+
+    <p>
+
+        Register now and get your diabetes risk prediction in just a few seconds.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="{% url 'register' %}" class="hero-btn">
+
+            Get Started
+
+        </a>
+
+        <a href="{% url 'login' %}" class="hero-btn secondary-btn">
+
+            Login
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>
+
+            🩺 AI Diabetes Predictor
+
+        </h3>
+
+        <p>
+
+            A secure healthcare application for early diabetes risk prediction
+            using Artificial Intelligence.
+
+        </p>
+
+        <hr>
+
+        <p>
+
+            © 2026 AI Diabetes Predictor. All Rights Reserved.
+
+        </p>
+
+        <p>
+
+            Developed Using Python • Django • Machine Learning
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Diabetes Prediction System</title>
+
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+   
+<div class="container">
+
+    <h1>🩺 About Our Project</h1>
+
+     <p class="subtitle">
+Learn how our AI-powered system helps predict diabetes early using
+Machine Learning and modern web technologies.
+</p>
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+            The AI-Based Early Diabetes Prediction System is designed to predict
+            diabetes risk using Machine Learning techniques.
+            Users can enter health information and receive an instant prediction.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Project Objectives</h2>
+        <ul>
+            <li>Detect diabetes at an early stage.</li>
+            <li>Provide fast and accurate predictions.</li>
+            <li>Help users understand their health risk.</li>
+            <li>Use Artificial Intelligence in healthcare.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Python</li>
+            <li>Django Framework</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Machine Learning</li>
+            <li>Scikit-Learn</li>
+            <li>SQLite Database</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Dataset Information</h2>
+        <p>
+            This project uses the Pima Indians Diabetes Dataset,
+            which contains medical information such as glucose level,
+            BMI, blood pressure, age, insulin, and other health factors.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Machine Learning Model</h2>
+        <p>
+            The system uses a trained Machine Learning model
+            to analyze patient health parameters and predict
+            whether a person is likely to have diabetes.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Future Scope</h2>
+        <ul>
+            <li>Prediction History</li>
+            <li>PDF Report Generation</li>
+            <li>Email Notifications</li>
+            <li>Cloud Deployment</li>
+            <li>Advanced AI Models</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="button-area">
+    <a href="{% url 'home' %}" class="btn">⬅ Back to Home</a>
+</div>
+
+<footer>
+    <p>© 2026 AI-Based Early Diabetes Prediction System</p>
+    <p>Developed using Python • Django • Machine Learning</p>
+</footer>
+
+</body>
+</html>

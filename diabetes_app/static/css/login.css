@@ -1,0 +1,406 @@
+/* ==========================================
+   AI DIABETES PREDICTOR
+   LOGIN PAGE
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f4f8fc;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.login-container{
+
+    width:1100px;
+
+    max-width:95%;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.login-left{
+
+    background:#EAF4FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+.login-left img{
+
+    width:420px;
+
+    max-width:100%;
+
+}
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.login-box{
+
+    width:100%;
+
+    max-width:380px;
+
+}
+
+.login-box h1{
+
+    font-size:38px;
+
+    color:#1565C0;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#666;
+
+    margin-bottom:35px;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#444;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d0d7e2;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    border-color:#1565C0;
+
+    box-shadow:0 0 10px rgba(21,101,192,.15);
+
+}
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#555;
+
+}
+
+.options a{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:500;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   LOGIN BUTTON
+========================================== */
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#1565C0;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#0D47A1;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   REGISTER LINK
+========================================== */
+
+.register-text{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#555;
+
+}
+
+.register-text a{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+.register-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode{
+
+    background:#121212;
+
+}
+
+body.dark-mode .login-container{
+
+    background:#1e1e1e;
+
+}
+
+body.dark-mode .login-left{
+
+    background:#0D47A1;
+
+}
+
+body.dark-mode .login-box h1{
+
+    color:white;
+
+}
+
+body.dark-mode .subtitle,
+
+body.dark-mode label,
+
+body.dark-mode .register-text{
+
+    color:#dddddd;
+
+}
+
+body.dark-mode input{
+
+    background:#2c2c2c;
+
+    color:white;
+
+    border:1px solid #444;
+
+}
+
+body.dark-mode input::placeholder{
+
+    color:#aaaaaa;
+
+}
+
+body.dark-mode .options a,
+
+body.dark-mode .register-text a{
+
+    color:#64B5F6;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.login-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.login-left{
+
+    display:none;
+
+}
+
+.login-right{
+
+    padding:40px 25px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.login-box h1{
+
+    font-size:30px;
+
+}
+
+.subtitle{
+
+    font-size:15px;
+
+}
+
+.input-group input{
+
+    padding:12px;
+
+}
+
+.login-btn{
+
+    padding:13px;
+
+    font-size:16px;
+
+}
+
+.options{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+}

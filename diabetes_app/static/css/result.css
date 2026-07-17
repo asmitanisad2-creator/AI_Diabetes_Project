@@ -1,0 +1,572 @@
+
+/* ==========================================
+   Result Page
+========================================== */
+
+.result-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   Report Header
+========================================== */
+
+.report-header{
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:30px;
+
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
+
+}
+
+.report-header h1{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.report-header p{
+
+    opacity:.95;
+
+}
+
+.report-info{
+
+    background:rgba(255,255,255,.15);
+
+    padding:20px;
+
+    border-radius:15px;
+
+    min-width:260px;
+
+}
+
+.report-info p{
+
+    margin:8px 0;
+
+}
+
+/* ==========================================
+   Report Card
+========================================== */
+
+.report-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.report-card h2{
+
+    color:#1E293B;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.report-btn{
+    display:inline-block;
+    background:#2563EB;
+    color:white;
+    text-decoration:none;
+    padding:8px 18px;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:500;
+}
+
+.report-btn:hover{
+    background:#1D4ED8;
+}
+
+/* ==========================================
+   Patient Information
+========================================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.info-box{
+
+    background:#F8FAFC;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.info-box:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.info-box span{
+
+    display:block;
+
+    color:#64748B;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+}
+
+.info-box h3{
+
+    color:#1E293B;
+
+    font-size:22px;
+
+}
+
+/* ==========================================
+   Prediction
+========================================== */
+
+.prediction{
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+
+}
+
+.prediction i{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.prediction h2{
+
+    justify-content:center;
+
+    margin-bottom:10px;
+
+    font-size:32px;
+
+}
+
+.prediction p{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.success{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.danger{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+/* ==========================================
+   Confidence Bar
+========================================== */
+
+.confidence{
+
+    margin-top:25px;
+
+}
+
+.confidence-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:18px;
+
+    background:#E2E8F0;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#16A34A,#22C55E);
+
+    border-radius:30px;
+
+    animation:loadBar 2s ease;
+
+}
+
+@keyframes loadBar{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:95%;
+
+    }
+
+}
+/* ==========================================
+   Health Parameters Table
+========================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+table th{
+
+    background:#2563EB;
+
+    color:white;
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:16px;
+
+}
+
+table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #E2E8F0;
+
+    font-size:15px;
+
+}
+
+table tr:nth-child(even){
+
+    background:#F8FAFC;
+
+}
+
+table tr:hover{
+
+    background:#EFF6FF;
+
+}
+
+/* ==========================================
+   Recommendations
+========================================== */
+
+.recommendations{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.recommendations li{
+
+    background:#F8FAFC;
+
+    margin-bottom:15px;
+
+    padding:18px 22px;
+
+    border-left:6px solid #2563EB;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+    color:#334155;
+
+}
+
+.recommendations li:hover{
+
+    transform:translateX(6px);
+
+    background:#EFF6FF;
+
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+.button-group .btn{
+
+    min-width:190px;
+
+    text-align:center;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.button-group .btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+/* Dashboard Button */
+
+.btn-dashboard{
+
+    background:#2563EB;
+
+}
+
+.btn-dashboard:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* Download PDF Button */
+
+.btn-pdf{
+
+    background:#16A34A;
+
+}
+
+.btn-pdf:hover{
+
+    background:#15803D;
+
+}
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+.report-header{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:20px;
+
+}
+
+.report-info{
+
+    width:100%;
+
+}
+
+.info-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.prediction h2{
+
+    font-size:26px;
+
+}
+
+.prediction p{
+
+    font-size:18px;
+
+}
+
+.button-group{
+
+    flex-direction:column;
+
+}
+
+.button-group .btn{
+
+    width:100%;
+
+}
+
+table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+}
+
+/* ==========================================
+   Print Style
+========================================== */
+
+@media print{
+
+.sidebar,
+.topbar,
+footer,
+.button-group{
+
+    display:none;
+
+}
+
+.content{
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.result-container{
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+.report-card{
+
+    box-shadow:none;
+
+    border:1px solid #ddd;
+
+}
+
+.report-header{
+
+    box-shadow:none;
+
+}
+
+}

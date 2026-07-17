@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AI Diabetes Predictor</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-left">
+
+        <img src="{% static 'images/doctor.png' %}" alt="Doctor">
+
+    </div>
+
+    <div class="login-right">
+
+        <div class="login-box">
+
+            <h1>Welcome Back</h1>
+
+            <p class="subtitle">
+                Login to access your AI Diabetes Predictor account.
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="#">Forgot Password?</a>
+
+                </div>
+
+                <button type="submit" class="login-btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="{% url 'register' %}">
+
+                    Register
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

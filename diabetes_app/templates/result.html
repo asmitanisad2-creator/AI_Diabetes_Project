@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Prediction Result
+{% endblock %}
+
+{% block page_title %}
+Prediction Result
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/result.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="result-container">
+
+    <!-- Report Header -->
+    <div class="report-header">
+
+        <div>
+            <h1>
+                <i class="fa-solid fa-file-medical"></i>
+                Diabetes Prediction Report
+            </h1>
+
+            <p>Your health report has been generated successfully.</p>
+        </div>
+
+        <div class="report-info">
+            <p><strong>Report ID:</strong> AI-{{ patient.id|stringformat:"06d" }}</p>
+            <p><strong>Date:</strong> {{ patient.created_at|date:"d M Y" }}</p>
+            <p><strong>Model:</strong> Random Forest</p>
+        </div>
+
+    </div>
+
+    <!-- Patient Information -->
+
+    <div class="report-card">
+
+        <h2>
+            <i class="fa-solid fa-user"></i>
+            Patient Information
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <span>Patient Name</span>
+                <h3>{{ patient.name }}</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Age</span>
+                <h3>{{ patient.age }} Years</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Prediction Date</span>
+                <h3>{{ patient.created_at|date:"d M Y" }}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Prediction -->
+
+    <div class="report-card">
+
+        <h2>
+            <i class="fa-solid fa-brain"></i>
+            AI Prediction
+        </h2>
+
+        {% if patient.prediction == "Diabetic" %}
+
+        <div class="prediction danger">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h2>HIGH RISK</h2>
+
+            <p>{{ patient.prediction }}</p>
+
+        </div>
+
+        {% else %}
+
+        <div class="prediction success">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h2>LOW RISK</h2>
+
+            <p>{{ patient.prediction }}</p>
+
+        </div>
+
+        {% endif %}
+
+        <!-- Confidence -->
+
+        <div class="confidence">
+
+            <div class="confidence-header">
+
+                <span>Prediction Confidence</span>
+
+                <span>{{ patient.confidence }}%</span>
+            </div>
+
+            <div class="progress">
+
+                <div
+    class="progress-bar"
+    <div class="progress">
+    <div class="progress-bar"
+        style="width: {{ patient.confidence }}%;">
+    </div>
+</div>
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Health Parameters -->
+
+    <div class="report-card">
+
+        <h2>
+            <i class="fa-solid fa-heart-pulse"></i>
+            Health Parameters
+        </h2>
+
+        <table>
+
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+
+            <tr>
+                <td>Pregnancies</td>
+                <td>{{ patient.pregnancies }}</td>
+            </tr>
+
+            <tr>
+                <td>Glucose</td>
+                <td>{{ patient.glucose }}</td>
+            </tr>
+
+            <tr>
+                <td>Blood Pressure</td>
+                <td>{{ patient.blood_pressure }}</td>
+            </tr>
+
+            <tr>
+                <td>Skin Thickness</td>
+                <td>{{ patient.skin_thickness }}</td>
+            </tr>
+
+            <tr>
+                <td>Insulin</td>
+                <td>{{ patient.insulin }}</td>
+            </tr>
+
+            <tr>
+                <td>BMI</td>
+                <td>{{ patient.bmi }}</td>
+            </tr>
+
+            <tr>
+                <td>Diabetes Pedigree</td>
+                <td>{{ patient.diabetes_pedigree }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Recommendations -->
+
+    <div class="report-card">
+
+        <h2>
+            <i class="fa-solid fa-lightbulb"></i>
+            AI Health Recommendations
+        </h2>
+
+        {% if patient.prediction == "Diabetic" %}
+
+        <ul class="recommendations">
+
+            <li>✔ Consult a doctor for proper diagnosis.</li>
+
+            <li>✔ Reduce sugar and processed food intake.</li>
+
+            <li>✔ Exercise at least 30 minutes daily.</li>
+
+            <li>✔ Drink 2–3 litres of water every day.</li>
+
+            <li>✔ Monitor blood glucose regularly.</li>
+
+            <li>✔ Maintain a healthy body weight.</li>
+
+        </ul>
+
+        {% else %}
+
+        <ul class="recommendations">
+
+            <li>✔ Continue eating a balanced diet.</li>
+
+            <li>✔ Exercise regularly.</li>
+
+            <li>✔ Drink enough water.</li>
+
+            <li>✔ Get 7–8 hours of sleep daily.</li>
+
+            <li>✔ Avoid excessive sugar consumption.</li>
+
+            <li>✔ Have regular health check-ups.</li>
+
+        </ul>
+
+        {% endif %}
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="button-group">
+
+        <button onclick="window.print()" class="btn">
+            <i class="fa-solid fa-print"></i>
+            Print Report
+        </button>
+
+        <a href="{% url 'predict' %}" class="btn">
+            <i class="fa-solid fa-plus"></i>
+            New Prediction
+        </a>
+
+        <a href="{% url 'dashboard' %}" class="btn">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="{% url 'download_pdf' patient.id %}" class="btn btn-success">
+        <i class="fa-solid fa-file-pdf"></i>
+        Download PDF
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

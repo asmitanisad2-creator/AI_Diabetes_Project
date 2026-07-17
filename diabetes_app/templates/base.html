@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        AI Diabetes Patient Portal
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h2>AI Diabetes</h2>
+
+            <span>Patient Portal</span>
+
+        </div>
+
+        <div class="user-box">
+
+            <div class="avatar">
+
+                {{ request.user.username|first|upper }}
+
+            </div>
+
+            <h3 class="patient-name">
+    {% if request.user.first_name %}
+        {{ request.user.first_name }} {{ request.user.last_name }}
+    {% else %}
+        {{ request.user.username }}
+    {% endif %}
+</h3>
+
+<p class="patient-role">
+    Patient
+</p>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+
+                <a href="{% url 'dashboard' %}">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="{% url 'predict' %}">
+
+                    <i class="fa-solid fa-stethoscope"></i>
+
+                    New Prediction
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="{% url 'history' %}">
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                    My Reports
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="{% url 'profile' %}">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="{% url 'contact' %}">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Contact Support
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="{% url 'logout' %}" class="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+        <!-- Top Navbar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    {% block page_title %}
+                    Dashboard
+                    {% endblock %}
+
+                </h1>
+
+                <p>
+
+                    Welcome back,
+                    <strong>{{ request.user.username }}</strong>
+
+                </p>
+
+            </div>
+
+            <div class="top-profile">
+
+                <i class="fa-solid fa-user-circle"></i>
+
+            </div>
+
+        </header>
+
+        <!-- Dynamic Page -->
+
+        <section class="page-content">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+
+                © 2026 AI Diabetes Patient Portal
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

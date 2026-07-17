@@ -1,0 +1,669 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block page_title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<!-- Welcome Banner -->
+
+<div class="welcome-banner">
+
+    <div>
+
+        <h2>
+            Welcome back,
+            {{ request.user.username }} 👋
+        </h2>
+
+        <p>
+            Here you can view your diabetes prediction reports,
+            monitor your health history and create a new prediction.
+        </p>
+
+    </div>
+
+    <div class="welcome-icon">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     Patient Profile
+========================== -->
+
+<div class="profile-card">
+
+    <div class="profile-left">
+
+        <div class="profile-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+        <div>
+
+            <h2>{{ request.user.username }}</h2>
+
+            <p>{{ request.user.email }}</p>
+
+        </div>
+
+    </div>
+
+    <div class="profile-right">
+
+        <div class="profile-box">
+
+            <h4>Total Reports</h4>
+
+            <p>{{ total }}</p>
+
+        </div>
+
+        <div class="profile-box">
+
+            <h4>Latest Status</h4>
+
+            {% if latest_prediction %}
+
+                {% if latest_prediction.prediction == "Diabetic" %}
+                    <span class="danger-text">High Risk</span>
+                {% else %}
+                    <span class="healthy-text">Healthy</span>
+                {% endif %}
+
+            {% else %}
+
+                <span>No Reports</span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Summary Cards -->
+
+<div class="summary-grid">
+
+    <!-- Total Reports -->
+
+    <div class="summary-card">
+
+        <div class="icon blue">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+        </div>
+
+        <div>
+
+            <h3>Total Reports</h3>
+
+            <h1>{{ total }}</h1>
+
+            <span>Your saved reports</span>
+
+        </div>
+
+    </div>
+
+    <!-- Healthy -->
+
+    <div class="summary-card">
+
+        <div class="icon green">
+
+            <i class="fa-solid fa-heart-circle-check"></i>
+
+        </div>
+
+        <div>
+
+            <h3>Healthy Reports</h3>
+
+            <h1>{{ healthy }}</h1>
+
+            <span>No diabetes detected</span>
+
+        </div>
+
+    </div>
+
+    <!-- High Risk -->
+
+    <div class="summary-card">
+
+        <div class="icon red">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+        <div>
+
+            <h3>High Risk Reports</h3>
+
+            <h1>{{ high_risk }}</h1>
+
+            <span>Needs medical attention</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Quick Action -->
+
+<div class="new-prediction-card">
+
+    <div>
+
+        <h2>
+
+            Start a New Diabetes Prediction
+
+        </h2>
+
+        <p>
+
+            Fill in your latest medical values and let the AI
+            generate a prediction.
+
+        </p>
+
+    </div>
+
+    <a href="{% url 'predict' %}" class="btn">
+
+        <i class="fa-solid fa-stethoscope"></i>
+
+        Start Prediction
+
+    </a>
+
+</div>
+
+<!-- Charts Section -->
+
+<div class="charts-grid">
+
+    <!-- Pie Chart -->
+
+    <div class="chart-card">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            Prediction Distribution
+
+        </h2>
+
+        <canvas id="pieChart"></canvas>
+
+    </div>
+
+    <!-- Bar Chart -->
+
+    <div class="chart-card">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            Prediction Statistics
+
+        </h2>
+
+        <canvas id="barChart"></canvas>
+
+    </div>
+
+</div>
+
+<!-- Dashboard Grid -->
+
+<div class="dashboard-grid">
+    <!-- =========================
+     Recent Reports
+========================== -->
+
+<div class="recent-reports card">
+
+    <div class="section-header">
+
+        <h2>
+            <i class="fa-solid fa-file-medical"></i>
+            My Recent Reports
+        </h2>
+
+        <a href="{% url 'history' %}" class="view-all">
+            View All
+        </a>
+
+    </div>
+
+    <table>
+
+    <thead>
+
+       <tr>
+
+        <th>Date</th>
+
+        <th>Prediction</th>
+
+        <th>Glucose</th>
+
+        <th>BMI</th>
+
+        <th>Action</th>
+
+       </tr>
+
+    </thead>
+
+        <tbody>
+
+        {% for patient in recent_patients %}
+
+            <tr>
+
+    <td>
+
+        {{ patient.created_at|date:"d M Y" }}
+
+    </td>
+
+    <td>
+
+        {% if patient.prediction == "Diabetic" %}
+
+            <span class="status danger">
+
+                🔴 High Risk
+
+            </span>
+
+        {% else %}
+
+            <span class="status healthy">
+
+                🟢 Healthy
+
+            </span>
+
+        {% endif %}
+
+    </td>
+
+    <td>
+
+        {{ patient.glucose }}
+
+    </td>
+
+    <td>
+
+        {{ patient.bmi }}
+
+    </td>
+
+    <td>
+
+    <a href="{% url 'result' patient.id %}" class="report-btn">
+
+        View Report
+
+    </a>
+
+</td>
+
+</tr>
+
+        {% empty %}
+
+            <tr>
+
+                <td colspan="4" class="empty">
+
+                    No reports available.
+
+                    <br><br>
+
+                    <a href="{% url 'predict' %}" class="btn">
+
+                        Create Your First Prediction
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<!-- =========================
+     Latest Health Status
+========================== -->
+
+<div class="latest-status card">
+
+    <div class="status-header">
+
+        <h2>
+            <i class="fa-solid fa-heart-circle-check"></i>
+            Latest Health Status
+        </h2>
+
+    </div>
+
+    {% if latest_prediction %}
+
+    <div class="status-content">
+
+        <div class="status-result">
+
+            {% if latest_prediction.prediction == "Diabetic" %}
+
+                <span class="status-badge danger">
+
+                    🔴 High Risk
+
+                </span>
+
+            {% else %}
+
+                <span class="status-badge healthy">
+
+                    🟢 Healthy
+
+                </span>
+
+            {% endif %}
+
+        </div>
+
+        <div class="status-details">
+
+            <div class="detail-box">
+
+                <h4>Prediction Date</h4>
+
+                <p>{{ latest_prediction.created_at|date:"d M Y" }}</p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Age</h4>
+
+                <p>{{ latest_prediction.age }} Years</p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Glucose</h4>
+
+                <p>{{ latest_prediction.glucose }}</p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>BMI</h4>
+
+                <p>{{ latest_prediction.bmi }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="recommendation">
+
+            <h3>
+
+                Recommendation
+
+            </h3>
+
+            {% if latest_prediction.prediction == "Diabetic" %}
+
+                <p>
+
+                    Please consult a healthcare professional for
+                    further evaluation and follow your doctor's advice.
+
+                </p>
+
+            {% else %}
+
+                <p>
+
+                    Great! Continue maintaining a healthy lifestyle,
+                    balanced diet and regular exercise.
+
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="empty-status">
+
+        <i class="fa-solid fa-notes-medical"></i>
+
+        <h3>No Prediction Available</h3>
+
+        <p>
+
+            You haven't made any prediction yet.
+
+        </p>
+
+        <a href="{% url 'predict' %}" class="btn">
+
+            Start Your First Prediction
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<!-- =========================
+     Health Tips
+========================== -->
+
+<div class="health-tips card">
+
+    <h2>
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        Daily Health Tips
+
+    </h2>
+
+    <div class="tips">
+
+        <div class="tip">
+
+            💧 Drink 2–3 litres of water every day.
+
+        </div>
+
+        <div class="tip">
+
+            🚶 Walk for at least 30 minutes daily.
+
+        </div>
+
+        <div class="tip">
+
+            🥗 Eat more vegetables and fibre-rich foods.
+
+        </div>
+
+        <div class="tip">
+
+            😴 Get 7–8 hours of sleep.
+
+        </div>
+
+        <div class="tip">
+
+            🩺 Check your blood sugar regularly if advised by your doctor.
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const healthyCount={{healthy }};
+const highRiskCount={{ high_risk }};
+
+// Pie Chart
+
+new Chart(document.getElementById('pieChart'),{
+
+type:'pie',
+
+data:{
+
+labels:['Healthy','High Risk'],
+
+datasets:[{
+
+data:[healthyCount,highRiskCount],
+
+backgroundColor:[
+
+'#22C55E',
+
+'#EF4444'
+
+],
+
+borderWidth:2
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+position:'bottom'
+
+}
+
+}
+
+}
+
+});
+
+// Bar Chart
+
+new Chart(document.getElementById('barChart'),{
+
+type:'bar',
+
+data:{
+
+labels:['Healthy','High Risk'],
+
+datasets:[{
+
+label:'Reports',
+
+data:[healthyCount,highRiskCount],
+
+backgroundColor:[
+
+'#22C55E',
+
+'#EF4444'
+
+]
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:false
+
+}
+
+},
+
+scales:{
+
+y:{
+
+beginAtZero:true
+
+}
+
+}
+
+}
+
+});
+
+</script>
+
+{% endblock %}
