@@ -479,4 +479,228 @@ footer{
 
 }
 
+  }
+/* ==========================
+Top Right
+========================== */
+
+.top-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.theme-toggle{
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:#2563EB;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.theme-toggle:hover{
+
+transform:rotate(25deg);
+
+background:#1D4ED8;
+
+}
+
+/* ==========================
+DARK MODE
+========================== */
+
+body.dark-mode{
+    background:#0F172A;
+    color:#F8FAFC;
+}
+
+/* Main content */
+body.dark-mode .content{
+    background:#0F172A;
+}
+
+/* Cards */
+body.dark-mode .card,
+body.dark-mode .profile-card,
+body.dark-mode .info-card,
+body.dark-mode .report-card,
+body.dark-mode .summary-card,
+body.dark-mode .stat-card,
+body.dark-mode .welcome-banner,
+body.dark-mode .new-prediction-card,
+body.dark-mode .recent-reports,
+body.dark-mode .health-tips{
+    background:#1E293B;
+    color:white;
+}
+
+/* Top bar */
+body.dark-mode .topbar{
+
+    background:transparent;
+
+}
+
+/* Sidebar */
+body.dark-mode .sidebar{
+    background:#111827;
+}
+
+/* Tables */
+body.dark-mode table{
+    background:#1E293B;
+    color:white;
+}
+
+body.dark-mode th{
+    background:#334155;
+    color:white;
+}
+
+body.dark-mode td{
+    border-color:#475569;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+    background:#334155;
+    color:white;
+    border:1px solid #475569;
+}
+
+body.dark-mode input::placeholder{
+    color:#CBD5E1;
+}
+
+/* Dark mode text */
+
+body.dark-mode .content{
+
+    color:#F8FAFC;
+
+}
+
+body.dark-mode .predict-card,
+body.dark-mode .profile-card,
+body.dark-mode .report-card,
+body.dark-mode .summary-card,
+body.dark-mode .stat-card,
+body.dark-mode .info-card,
+body.dark-mode .recent-reports,
+body.dark-mode .health-tips{
+
+    color:#F8FAFC;
+
+}
+
+/* Footer */
+body.dark-mode footer{
+    background:#111827;
+    color:white;
+}
+/* ==========================
+   Footer
+========================== */
+
+.footer{
+
+    margin-top:40px;
+
+    background:#0F172A;
+
+    color:#E2E8F0;
+
+    padding:25px 35px;
+
+    border-radius:18px;
+
+}
+
+.footer-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+}
+
+.footer-left h3{
+
+    color:#3B82F6;
+
+    margin-bottom:8px;
+
+}
+
+.footer-left p,
+.footer-center p,
+.footer-right p{
+
+    margin:4px 0;
+
+    color:#CBD5E1;
+
+}
+
+.footer-center{
+
+    text-align:center;
+
+}
+
+.footer-right{
+
+    text-align:right;
+
+}
+
+@media(max-width:768px){
+
+.footer-content{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.footer-right{
+
+    text-align:center;
+
+}
+
 }

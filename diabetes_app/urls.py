@@ -36,4 +36,12 @@ path(
     views.delete_report,
     name="delete_report"
 ),
+
+path("edit-profile/", views.edit_profile, name="edit_profile"),
+
+path(
+    "change-password/",
+    views.change_password,
+    name="change_password"
+),
 ]

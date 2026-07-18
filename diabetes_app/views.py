@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import update_session_auth_hash
 
 from django.http import HttpResponse
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -417,3 +418,61 @@ def profile(request):
     }
 
     return render(request, "profile.html", context)
+
+@login_required(login_url='login')
+def edit_profile(request):
+
+    user = request.user
+
+    if request.method == "POST":
+
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+
+        user.username = username
+        user.email = email
+        user.save()
+
+        messages.success(request, "Profile updated successfully!")
+
+        return redirect("profile")
+
+    return render(request, "edit_profile.html")
+
+@login_required(login_url='login')
+def change_password(request):
+
+    if request.method == "POST":
+
+        current_password = request.POST.get("current_password")
+        new_password = request.POST.get("new_password")
+        confirm_password = request.POST.get("confirm_password")
+
+        user = request.user
+
+        # Check current password
+        if not user.check_password(current_password):
+
+            messages.error(request, "Current password is incorrect.")
+
+            return redirect("change_password")
+
+        # Check new password
+        if new_password != confirm_password:
+
+            messages.error(request, "New passwords do not match.")
+
+            return redirect("change_password")
+
+        # Update password
+        user.set_password(new_password)
+        user.save()
+
+        # Keep user logged in
+        update_session_auth_hash(request, user)
+
+        messages.success(request, "Password changed successfully!")
+
+        return redirect("profile")
+
+    return render(request, "change_password.html")

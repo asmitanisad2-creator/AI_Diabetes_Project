@@ -1,0 +1,565 @@
+/* ==========================================
+   AI Diabetes Patient Portal
+   Global Dark Mode
+========================================== */
+
+body.dark-mode{
+
+    background:#0F172A;
+
+    color:#F8FAFC;
+
+}
+
+/* Main Content */
+
+body.dark-mode .content{
+
+    background:#0F172A;
+
+}
+
+/* Sidebar */
+
+body.dark-mode .sidebar{
+
+    background:#111827;
+
+}
+
+/* Topbar */
+
+body.dark-mode .topbar{
+
+    background:transparent;
+
+}
+
+/* Footer */
+
+body.dark-mode footer{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+/* Common Cards */
+
+body.dark-mode .card,
+body.dark-mode .profile-card,
+body.dark-mode .summary-card,
+body.dark-mode .report-card,
+body.dark-mode .chart-card,
+body.dark-mode .health-tips,
+body.dark-mode .recent-reports,
+body.dark-mode .latest-status,
+body.dark-mode .new-prediction-card,
+body.dark-mode .predict-card,
+body.dark-mode .info-card,
+body.dark-mode .history-card,
+body.dark-mode .contact-card{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+}
+
+/* Common Headings */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4{
+
+    color:white;
+
+}
+
+/* Paragraphs */
+
+body.dark-mode p{
+
+    color:#CBD5E1;
+
+}
+
+/* Small Labels */
+
+body.dark-mode span{
+
+    color:#CBD5E1;
+
+}
+/* ==========================================
+   Forms
+========================================== */
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea{
+
+    background:#334155;
+
+    color:#F8FAFC;
+
+    border:1px solid #475569;
+
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder{
+
+    color:#94A3B8;
+
+}
+
+body.dark-mode label{
+
+    color:#E2E8F0;
+
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus{
+
+    border-color:#3B82F6;
+
+    box-shadow:0 0 10px rgba(59,130,246,.3);
+
+}
+
+
+/* ==========================================
+   Tables
+========================================== */
+
+body.dark-mode table{
+
+    background:#1E293B;
+
+    color:white;
+
+}
+
+body.dark-mode thead{
+
+    background:#334155;
+
+}
+
+body.dark-mode th{
+
+    color:white;
+
+}
+
+body.dark-mode td{
+
+    color:#E2E8F0;
+
+    border-color:#475569;
+
+}
+
+body.dark-mode tbody tr:hover{
+
+    background:#334155;
+
+}
+
+
+/* ==========================================
+   Buttons
+========================================== */
+
+body.dark-mode .btn{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+body.dark-mode .btn:hover{
+
+    background:#1D4ED8;
+
+}
+
+body.dark-mode .report-btn{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+body.dark-mode .report-btn:hover{
+
+    background:#1D4ED8;
+
+}
+
+
+/* ==========================================
+   Progress Bar
+========================================== */
+
+body.dark-mode .progress{
+
+    background:#475569;
+
+}
+
+body.dark-mode .confidence{
+
+    background:#334155;
+
+}
+
+
+/* ==========================================
+   Search Box
+========================================== */
+
+body.dark-mode .search-box input{
+
+    background:#334155;
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   Pagination
+========================================== */
+
+body.dark-mode .pagination a{
+
+    background:#334155;
+
+    color:white;
+
+}
+
+body.dark-mode .pagination a:hover{
+
+    background:#2563EB;
+
+}
+/* ==========================================
+   Dashboard
+========================================== */
+
+body.dark-mode .welcome-banner{
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:white;
+}
+
+body.dark-mode .summary-card,
+body.dark-mode .profile-box,
+body.dark-mode .detail-box,
+body.dark-mode .tip{
+    background:#334155;
+}
+
+body.dark-mode .summary-card h3,
+body.dark-mode .profile-box h4,
+body.dark-mode .detail-box h4{
+    color:#CBD5E1;
+}
+
+body.dark-mode .summary-card h1,
+body.dark-mode .profile-box p,
+body.dark-mode .detail-box p{
+    color:white;
+}
+
+/* ==========================================
+   Charts
+========================================== */
+
+body.dark-mode .chart-card{
+    background:#1E293B;
+}
+
+body.dark-mode .chart-card h2{
+    color:white;
+}
+
+/* ==========================================
+   Result Page
+========================================== */
+
+body.dark-mode .prediction.success{
+    background:#064E3B;
+    color:white;
+}
+
+body.dark-mode .prediction.danger{
+    background:#7F1D1D;
+    color:white;
+}
+
+body.dark-mode .info-box{
+    background:#334155;
+}
+
+body.dark-mode .info-box span{
+    color:#CBD5E1;
+}
+
+body.dark-mode .info-box h3{
+    color:white;
+}
+
+/* ==========================================
+   Profile
+========================================== */
+
+body.dark-mode .profile-avatar{
+    background:#2563EB;
+    color:white;
+}
+
+body.dark-mode .status{
+    color:white;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+body.dark-mode footer{
+    border-top:1px solid #334155;
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+body.dark-mode .menu a{
+    color:#E2E8F0;
+}
+
+body.dark-mode .menu a:hover{
+    background:#2563EB;
+    color:white;
+}
+
+body.dark-mode .menu .active{
+    background:#2563EB;
+    color:white;
+}
+
+/* ==========================================
+   Smooth Transition
+========================================== */
+
+body,
+.sidebar,
+.content,
+.card,
+.summary-card,
+.profile-card,
+.report-card,
+.chart-card,
+.btn,
+input,
+textarea,
+select{
+    transition:all .3s ease;
+}
+/* ==========================================
+   Contact Page Dark Mode
+========================================== */
+
+body.dark-mode .contact-container,
+body.dark-mode .contact-card,
+body.dark-mode .contact-info,
+body.dark-mode .contact-form{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+}
+
+body.dark-mode .contact-card h2,
+body.dark-mode .contact-info h2,
+body.dark-mode .contact-form h2{
+
+    color:#FFFFFF;
+
+}
+
+body.dark-mode .contact-card p,
+body.dark-mode .contact-info p,
+body.dark-mode .contact-form p,
+body.dark-mode .contact-info li{
+
+    color:#CBD5E1;
+
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea{
+
+    background:#334155;
+
+    color:#FFFFFF;
+
+    border:1px solid #475569;
+
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder{
+
+    color:#94A3B8;
+
+}
+
+body.dark-mode .contact-form label{
+
+    color:#FFFFFF;
+
+}
+
+body.dark-mode .contact-form button{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+body.dark-mode .contact-form button:hover{
+
+    background:#1D4ED8;
+
+}
+/* ==========================
+   Contact Page Dark Mode
+========================== */
+
+body.dark-mode .contact-card,
+body.dark-mode .faq-card,
+body.dark-mode .map-card{
+
+    background:#1E293B;
+
+}
+
+body.dark-mode .contact-card h2,
+body.dark-mode .faq-card h2,
+body.dark-mode .map-card h2{
+
+    color:#60A5FA;
+
+}
+
+body.dark-mode .faq-item{
+
+    border-bottom:1px solid #334155;
+
+}
+
+body.dark-mode .faq-item h3{
+
+    color:#FFFFFF;
+
+}
+
+body.dark-mode .faq-item p{
+
+    color:#CBD5E1;
+
+}
+
+body.dark-mode .info-item h4{
+
+    color:#FFFFFF;
+
+}
+
+body.dark-mode .info-item p{
+
+    color:#CBD5E1;
+
+}
+
+body.dark-mode .developer-title{
+
+    color:#60A5FA;
+
+}
+
+body.dark-mode .form-group label{
+
+    color:#FFFFFF;
+
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea{
+
+    background:#334155;
+
+    color:#FFFFFF;
+
+    border:1px solid #475569;
+
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder{
+
+    color:#94A3B8;
+
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus{
+
+    border-color:#3B82F6;
+
+}
+
+body.dark-mode .success-message{
+
+    background:#14532D;
+
+    color:#BBF7D0;
+
+}
+/* Footer Dark Mode */
+
+body.dark-mode .footer{
+
+    background:#020617;
+
+    color:#F8FAFC;
+
+    border:1px solid #1E293B;
+
+}
+
+body.dark-mode .footer h3{
+
+    color:#60A5FA;
+
+}
+
+body.dark-mode .footer p{
+
+    color:#CBD5E1;
+
+}

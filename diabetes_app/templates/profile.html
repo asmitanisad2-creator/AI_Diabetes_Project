@@ -157,66 +157,21 @@ My Profile
 
     </div>
 
-    <!-- Edit Profile -->
+<a href="{% url 'edit_profile' %}" class="btn">
 
-<div class="info-card">
+    <i class="fa-solid fa-user-pen"></i>
 
-    <h2>
-        <i class="fa-solid fa-user-pen"></i>
-        Edit Profile
-    </h2>
+    Edit Profile
 
-    {% if messages %}
-        {% for message in messages %}
-            <div class="success-message">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+</a>
 
-    <form method="POST">
+<a href="{% url 'change_password' %}" class="btn">
 
-        {% csrf_token %}
+    <i class="fa-solid fa-key"></i>
 
-        <div class="edit-grid">
+    Change Password
 
-            <div class="input-group">
-
-                <label>Username</label>
-
-                <input
-                    type="text"
-                    name="username"
-                    value="{{ request.user.username }}"
-                    required>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Email</label>
-
-                <input
-                    type="email"
-                    name="email"
-                    value="{{ request.user.email }}"
-                    required>
-
-            </div>
-
-        </div>
-
-        <button type="submit" class="save-btn">
-
-            <i class="fa-solid fa-floppy-disk"></i>
-
-            Save Changes
-
-        </button>
-
-    </form>
-
-</div>
+</a>
 
     <!-- Quick Actions -->
 
