@@ -13,6 +13,8 @@
         {% endblock %}
     </title>
 
+    
+
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
 
@@ -70,76 +72,59 @@
         <ul class="menu">
 
             <li>
+    <a href="{% url 'dashboard' %}"
+       class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+</li>
 
-                <a href="{% url 'dashboard' %}">
+<li>
+    <a href="{% url 'predict' %}"
+       class="{% if request.resolver_match.url_name == 'predict' %}active{% endif %}">
+        <i class="fa-solid fa-stethoscope"></i>
+        New Prediction
+    </a>
+</li>
 
-                    <i class="fa-solid fa-house"></i>
+<li>
+    <a href="{% url 'history' %}"
+       class="{% if request.resolver_match.url_name == 'history' %}active{% endif %}">
+        <i class="fa-solid fa-file-medical"></i>
+        My Reports
+    </a>
+</li>
 
-                    Dashboard
+<li>
+    <a href="{% url 'profile' %}"
+       class="{% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
+        <i class="fa-solid fa-user"></i>
+        My Profile
+    </a>
+</li>
 
-                </a>
+<li>
+    <a href="{% url 'about' %}"
+       class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+        <i class="fa-solid fa-circle-info"></i>
+        About
+    </a>
+</li>
 
-            </li>
+<li>
+    <a href="{% url 'contact' %}"
+       class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+        <i class="fa-solid fa-headset"></i>
+        Contact
+    </a>
+</li>
 
-            <li>
-
-                <a href="{% url 'predict' %}">
-
-                    <i class="fa-solid fa-stethoscope"></i>
-
-                    New Prediction
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="{% url 'history' %}">
-
-                    <i class="fa-solid fa-file-medical"></i>
-
-                    My Reports
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="{% url 'profile' %}">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    My Profile
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="{% url 'contact' %}">
-
-                    <i class="fa-solid fa-headset"></i>
-
-                    Contact Support
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="{% url 'logout' %}" class="logout">
-
-                    <i class="fa-solid fa-right-from-bracket"></i>
-
-                    Logout
-
-                </a>
-
-            </li>
+<li>
+    <a href="{% url 'logout' %}" class="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
+</li>
 
         </ul>
 
@@ -180,11 +165,9 @@
 
     </button>
 
-    <div class="top-profile">
-
-        <i class="fa-solid fa-user-circle"></i>
-
-    </div>
+    <a href="{% url 'profile' %}" class="top-profile">
+    <i class="fa-solid fa-user-circle"></i>
+</a>
 
 </div>
         </header>

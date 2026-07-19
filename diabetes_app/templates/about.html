@@ -1,95 +1,188 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Diabetes Prediction System</title>
 
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
-</head>
-<body>
+{% block title %}
+About
+{% endblock %}
 
-   
-<div class="container">
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
 
-    <h1>🩺 About Our Project</h1>
+{% block page_title %}
+About
+{% endblock %}
 
-     <p class="subtitle">
-Learn how our AI-powered system helps predict diabetes early using
-Machine Learning and modern web technologies.
-</p>
-    <div class="card">
-        <h2>Project Overview</h2>
+{% block content %}
+
+<div class="about-container">
+
+    <!-- Header -->
+
+    <div class="about-header">
+
+        <div>
+
+            <h2>
+                <i class="fa-solid fa-circle-info"></i>
+                About AI Diabetes Patient Portal
+            </h2>
+
+            <p>
+                Supporting patients with secure diabetes risk assessment,
+                health record management, and easy access to prediction reports.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Welcome -->
+
+    <div class="about-card">
+
+        <h2>
+            <i class="fa-solid fa-heart-pulse"></i>
+            Welcome
+        </h2>
+
         <p>
-            The AI-Based Early Diabetes Prediction System is designed to predict
-            diabetes risk using Machine Learning techniques.
-            Users can enter health information and receive an instant prediction.
+            The AI Diabetes Patient Portal is designed to help patients
+            monitor their diabetes screening records in a simple, secure,
+            and user-friendly environment. Patients can access their
+            prediction history, manage their profile, and download reports
+            whenever required.
         </p>
+
     </div>
 
-    <div class="card">
-        <h2>Project Objectives</h2>
-        <ul>
-            <li>Detect diabetes at an early stage.</li>
-            <li>Provide fast and accurate predictions.</li>
-            <li>Help users understand their health risk.</li>
-            <li>Use Artificial Intelligence in healthcare.</li>
-        </ul>
+    <!-- Features -->
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <h3>New Prediction</h3>
+
+            <p>
+                Create a new diabetes prediction using your health details.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            <h3>Prediction History</h3>
+
+            <p>
+                View all your previous diabetes prediction reports.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-download"></i>
+
+            <h3>Download Reports</h3>
+
+            <p>
+                Download or print your reports anytime.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-user-pen"></i>
+
+            <h3>Manage Profile</h3>
+
+            <p>
+                Update your profile information and password securely.
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Python</li>
-            <li>Django Framework</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Machine Learning</li>
-            <li>Scikit-Learn</li>
-            <li>SQLite Database</li>
-        </ul>
+    <!-- Parameters -->
+
+    <div class="about-card">
+
+        <h2>
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+            Health Parameters Used
+
+        </h2>
+
+        <div class="parameter-grid">
+
+            <div>👶 Pregnancies</div>
+            <div>🩸 Glucose Level</div>
+            <div>❤️ Blood Pressure</div>
+            <div>📏 Skin Thickness</div>
+            <div>💉 Insulin Level</div>
+            <div>⚖️ Body Mass Index (BMI)</div>
+            <div>🧬 Diabetes Pedigree Function</div>
+            <div>🎂 Age</div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Dataset Information</h2>
+    <!-- Privacy -->
+
+    <div class="about-card">
+
+        <h2>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Privacy & Security
+
+        </h2>
+
         <p>
-            This project uses the Pima Indians Diabetes Dataset,
-            which contains medical information such as glucose level,
-            BMI, blood pressure, age, insulin, and other health factors.
+
+            Your personal information and prediction reports are securely
+            stored in your account. Only authenticated users can access
+            their health records.
+
         </p>
+
     </div>
 
-    <div class="card">
-        <h2>Machine Learning Model</h2>
-        <p>
-            The system uses a trained Machine Learning model
-            to analyze patient health parameters and predict
-            whether a person is likely to have diabetes.
-        </p>
-    </div>
+    <!-- Disclaimer -->
 
-    <div class="card">
-        <h2>Future Scope</h2>
-        <ul>
-            <li>Prediction History</li>
-            <li>PDF Report Generation</li>
-            <li>Email Notifications</li>
-            <li>Cloud Deployment</li>
-            <li>Advanced AI Models</li>
-        </ul>
+    <div class="disclaimer">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <div>
+
+            <h3>Medical Disclaimer</h3>
+
+            <p>
+
+                The prediction provided by this portal is intended for
+                educational and screening purposes only. It should not
+                be considered a medical diagnosis. Please consult a
+                qualified healthcare professional for proper diagnosis
+                and treatment.
+
+            </p>
+
+        </div>
+
     </div>
 
 </div>
 
-<div class="button-area">
-    <a href="{% url 'home' %}" class="btn">⬅ Back to Home</a>
-</div>
-
-<footer>
-    <p>© 2026 AI-Based Early Diabetes Prediction System</p>
-    <p>Developed using Python • Django • Machine Learning</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

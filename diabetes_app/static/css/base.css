@@ -625,21 +625,26 @@ body.dark-mode footer{
     background:#111827;
     color:white;
 }
-/* ==========================
+
+/* ==========================================
    Footer
-========================== */
+========================================== */
 
 .footer{
 
     margin-top:40px;
 
-    background:#0F172A;
+    background:#FFFFFF;
 
-    color:#E2E8F0;
+    color:#1E293B;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:18px;
 
     padding:25px 35px;
 
-    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
 
@@ -659,9 +664,7 @@ body.dark-mode footer{
 
 .footer-left h3{
 
-    color:#3B82F6;
-
-    margin-bottom:8px;
+    color:#2563EB;
 
 }
 
@@ -669,9 +672,9 @@ body.dark-mode footer{
 .footer-center p,
 .footer-right p{
 
-    margin:4px 0;
+    color:#64748B;
 
-    color:#CBD5E1;
+    margin:4px 0;
 
 }
 
@@ -702,5 +705,32 @@ body.dark-mode footer{
     text-align:center;
 
 }
+
+}
+/* ==========================================
+   Active Sidebar Menu
+========================================== */
+
+.menu a.active{
+
+    background:white;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    box-shadow:0 5px 15px rgba(37,99,235,.25);
+
+}
+
+.menu a.active i{
+
+    color:#2563EB;
+
+}
+.page-content{
+
+    width:100%;
+    overflow-x:hidden;
 
 }

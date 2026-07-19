@@ -5,9 +5,11 @@
 
 .result-container{
 
-    max-width:1100px;
-
-    margin:auto;
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+    padding:20px;
+    overflow-x:hidden;
 
 }
 
@@ -280,73 +282,50 @@
 
 }
 
-@keyframes loadBar{
-
-    from{
-
-        width:0;
-
-    }
-
-    to{
-
-        width:95%;
-
-    }
-
+.progress-bar{
+    height:100%;
+    background:linear-gradient(90deg,#16A34A,#22C55E);
+    border-radius:30px;
+    transition:width 1.5s ease;
 }
 /* ==========================================
    Health Parameters Table
 ========================================== */
 
 table{
-
     width:100%;
-
     border-collapse:collapse;
-
-    overflow:hidden;
-
     border-radius:15px;
-
+    overflow:hidden;
 }
 
 table th{
-
     background:#2563EB;
-
     color:white;
-
     padding:18px;
-
     text-align:left;
-
     font-size:16px;
-
 }
 
 table td{
-
     padding:18px;
-
+    color:#1E293B;
     border-bottom:1px solid #E2E8F0;
-
-    font-size:15px;
-
 }
 
-table tr:nth-child(even){
+/* Light Mode */
 
+table tbody tr:nth-child(odd){
+    background:#FFFFFF;
+}
+
+table tbody tr:nth-child(even){
     background:#F8FAFC;
-
 }
 
-table tr:hover{
-
-    background:#EFF6FF;
-
+table tbody tr:hover{
+    background:#E0F2FE;
 }
-
 /* ==========================================
    Recommendations
 ========================================== */

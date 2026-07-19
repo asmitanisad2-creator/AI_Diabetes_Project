@@ -544,7 +544,7 @@ body.dark-mode .success-message{
 
 body.dark-mode .footer{
 
-    background:#020617;
+    background:#0F172A;
 
     color:#F8FAFC;
 
@@ -562,4 +562,98 @@ body.dark-mode .footer p{
 
     color:#CBD5E1;
 
+}
+
+/* ==========================================
+   About Page Dark Mode
+========================================== */
+
+body.dark-mode .about-card,
+body.dark-mode .feature-card{
+
+    background:#1E293B;
+
+    color:white;
+
+}
+
+body.dark-mode .about-card h2,
+body.dark-mode .feature-card h3{
+
+    color:#60A5FA;
+
+}
+
+body.dark-mode .about-card p,
+body.dark-mode .feature-card p{
+
+    color:#CBD5E1;
+
+}
+
+body.dark-mode .parameter-grid div{
+
+    background:#334155;
+
+    color:white;
+
+}
+
+body.dark-mode .disclaimer{
+
+    background:#7F1D1D;
+
+    border-left:6px solid #EF4444;
+
+}
+
+body.dark-mode .disclaimer h3{
+
+    color:#FCA5A5;
+
+}
+
+body.dark-mode .disclaimer p{
+
+    color:#FECACA;
+
+}
+body.dark-mode .menu a.active{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+body.dark-mode .menu a.active i{
+
+    color:white;
+
+}
+/* Result Table Dark Mode */
+
+body.dark-mode table{
+    background:#1E293B;
+}
+
+body.dark-mode table th{
+    background:#334155;
+    color:#FFFFFF;
+}
+
+body.dark-mode table td{
+    color:#F8FAFC;
+}
+
+body.dark-mode table tbody tr:nth-child(odd){
+    background:#1E293B;
+}
+
+body.dark-mode table tbody tr:nth-child(even){
+    background:#334155;
+}
+
+body.dark-mode table tbody tr:hover{
+    background:#475569;
 }
