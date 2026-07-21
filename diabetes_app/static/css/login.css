@@ -1,5 +1,5 @@
 /* ==========================================
-   AI DIABETES PREDICTOR
+   GLUCOSENSE PREDICTOR
    LOGIN PAGE
 ========================================== */
 
@@ -30,19 +30,19 @@ body{
 
 .login-container{
 
-    width:1100px;
-
+    width:1200px;
     max-width:95%;
+
+    min-height:720px;
+
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
 
     background:white;
 
     border-radius:20px;
 
     overflow:hidden;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
 
     box-shadow:0 15px 40px rgba(0,0,0,.10);
 
@@ -403,4 +403,33 @@ body.dark-mode .register-text a{
 
 }
 
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.login-left{
+    background:#EAF4FF;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    overflow:hidden;
+}
+
+.login-left img{
+    width:100%;
+    max-width:520px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:25px;
+
+    display:block;
 }

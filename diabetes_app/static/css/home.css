@@ -1,5 +1,5 @@
 /* =====================================================
-   AI DIABETES PREDICTOR
+   GLUCOSENSE PREDICTOR
    HOME PAGE CSS
 ===================================================== */
 
@@ -307,19 +307,16 @@ body{
 }
 
 .hero-image{
-
-    flex:1;
-
-    text-align:center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img{
-
-    width:470px;
-
-    max-width:100%;
-
+    width: 100%;
+    max-width: 520px;   /* Adjust if needed */
+    border-radius: 40px; /* Rounded corners */
+    display: block;
 }
 
 /* =====================================================
@@ -553,58 +550,74 @@ body{
 
 }
 
-/* =====================================================
+/* ==========================================
    FOOTER
-===================================================== */
-
-footer{
-
-    background:#0D1B2A;
-
-    color:white;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-}
+========================================== */
 
 .footer-content{
-
-    max-width:900px;
-
-    margin:auto;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:40px;
+    margin-bottom:30px;
 }
 
-.footer-content h3{
+.footer{
+    background:#0F172A;
+    color:white;
+}
 
-    font-size:30px;
+.footer{
+    border-top:5px solid #2563EB;
+}
 
+.footer-column{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-column h3{
+    color:#3B82F6;
     margin-bottom:15px;
-
 }
 
-.footer-content hr{
-
-    border:none;
-
-    height:1px;
-
-    background:#3d4d63;
-
-    margin:25px 0;
-
+.footer-column p,
+.footer-column a{
+    color:#CBD5E1;
+    text-decoration:none;
+    display:block;
+    margin-bottom:10px;
 }
 
-.footer-content p{
-
-    color:#d6d6d6;
-
-    margin:8px 0;
-
+.footer-column a:hover{
+    color:#60A5FA;
 }
 
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#2563EB;
+    color:white;
+    font-size:18px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-4px);
+    background:#3B82F6;
+}
 /* =====================================================
    DARK MODE
 ===================================================== */
@@ -819,4 +832,11 @@ body.dark-mode .secondary-btn{
 
 }
 
+}
+.tips-heading{
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #1565C0;
+    letter-spacing: 1px;
 }

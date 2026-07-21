@@ -1,5 +1,5 @@
 /* ==========================================
-   AI Diabetes Patient Portal
+   GlucoSense Patient Portal
    Global Dark Mode
 ========================================== */
 
@@ -656,4 +656,40 @@ body.dark-mode table tbody tr:nth-child(even){
 
 body.dark-mode table tbody tr:hover{
     background:#475569;
+/* Dark Mode */
+
+body.dark-mode{
+    background:#0F172A;
+}
+
+body.dark-mode .container{
+    background:#1E293B;
+    color:#FFFFFF;
+}
+
+body.dark-mode h1{
+    color:#FFFFFF;
+}
+
+body.dark-mode input{
+    background:#334155;
+    color:#FFFFFF;
+    border:1px solid #475569;
+}
+
+body.dark-mode input::placeholder{
+    color:#CBD5E1;
+}
+
+body.dark-mode .login-link{
+    color:#CBD5E1;
+}
+
+body.dark-mode .login-link a{
+    color:#60A5FA;
+}
+
+body.dark-mode button{
+    background:#2563EB;
+}
 }

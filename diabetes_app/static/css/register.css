@@ -106,5 +106,93 @@ button:hover{
     font-weight:bold;
 
 }
+.password-message{
 
+    margin-top:-10px;
+    margin-bottom:18px;
+    font-size:14px;
+    font-weight:600;
+
+}
+/* Theme Toggle Button */
+
+.theme-toggle{
+
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#2563EB;
+    color:white;
+
+    font-size:18px;
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.theme-toggle:hover{
+
+    transform:rotate(20deg);
+
+}
+/* ==========================
+   Dark Mode
+========================== */
+
+body.dark-mode{
+    background:#0F172A;
+}
+
+body.dark-mode .container{
+    background:#1E293B;
+    color:#FFFFFF;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+body.dark-mode h1{
+    color:#60A5FA;
+}
+
+body.dark-mode input{
+    background:#334155;
+    color:#FFFFFF;
+    border:1px solid #475569;
+}
+
+body.dark-mode input::placeholder{
+    color:#CBD5E1;
+}
+
+body.dark-mode button{
+    background:#2563EB;
+    color:white;
+}
+
+body.dark-mode button:hover{
+    background:#1D4ED8;
+}
+
+body.dark-mode .login-link{
+    color:#CBD5E1;
+}
+
+body.dark-mode .login-link a{
+    color:#60A5FA;
+}
+
+body.dark-mode .message{
+    color:#F87171;
+}
+
+body.dark-mode .password-message{
+    color:#22C55E;
+}
 
