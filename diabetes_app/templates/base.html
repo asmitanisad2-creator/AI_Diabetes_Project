@@ -120,10 +120,9 @@
 </li>
 
 <li>
-    <a href="{% url 'logout' %}" class="logout">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Logout
-    </a>
+    <a href="#" onclick="confirmLogout()" class="logout-btn">
+    Logout
+</a>
 </li>
 
         </ul>
@@ -265,6 +264,42 @@ toggle.innerHTML='<i class="fa-solid fa-moon"></i>';
 
 }
 
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function confirmLogout() {
+
+    Swal.fire({
+        title: 'Logout?',
+        text: 'Are you sure you want to logout?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#1565C0',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Logout',
+        cancelButtonText: 'No'
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Log Out',
+                text: 'Logout Successful!',
+                timer: 1500,
+                showConfirmButton: false
+            }).then(() => {
+
+                window.location.href = "{% url 'logout' %}";
+
+            });
+
+        }
+
+    });
+
+}
 </script>
 
 </body>

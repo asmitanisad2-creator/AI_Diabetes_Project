@@ -4,6 +4,18 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import update_session_auth_hash
+import random
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.conf import settings
+
+from django.contrib import messages
+
+from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 from django.http import HttpResponse
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -476,3 +488,97 @@ def change_password(request):
         return redirect("profile")
 
     return render(request, "change_password.html")
+
+def forgot_password(request):
+
+    if request.method == "POST":
+
+        email = request.POST.get("email")
+
+        try:
+            user = User.objects.get(email=email)
+
+            otp = str(random.randint(100000, 999999))
+
+            request.session["reset_email"] = email
+            request.session["reset_otp"] = otp
+
+            send_mail(
+                "GlucoSense Password Reset OTP",
+                f"""
+Hello,
+
+Your OTP for resetting your GlucoSense account password is:
+
+{otp}
+
+This OTP is valid for 5 minutes.
+
+If you did not request this, please ignore this email.
+
+Regards,
+GlucoSense Team
+                """,
+                settings.EMAIL_HOST_USER,
+                [email],
+                fail_silently=False,
+            )
+
+            return redirect("verify_otp")
+
+        except User.DoesNotExist:
+
+            messages.error(request, "No account found with this email.")
+
+    return render(request, "forgot_password.html")
+
+def verify_otp(request):
+
+    if request.method == "POST":
+
+        entered_otp = request.POST.get("otp")
+
+        saved_otp = request.session.get("reset_otp")
+
+        if entered_otp == saved_otp:
+
+            return redirect("reset_password")
+
+        else:
+
+            messages.error(request, "Invalid OTP. Please try again.")
+
+    return render(request, "verify_otp.html")
+
+
+def reset_password(request):
+
+    email = request.session.get("reset_email")
+
+    if not email:
+        return redirect("forgot_password")
+
+    if request.method == "POST":
+
+        password = request.POST.get("password")
+        confirm_password = request.POST.get("confirm_password")
+
+        if password != confirm_password:
+
+            messages.error(request, "Passwords do not match.")
+
+        else:
+
+            user = User.objects.get(email=email)
+
+            user.set_password(password)
+            user.save()
+
+            request.session.pop("reset_email", None)
+            request.session.pop("reset_otp", None)
+
+            messages.success(request, "Password changed successfully!")
+
+            return redirect("login")
+
+    return render(request, "reset_password.html")
