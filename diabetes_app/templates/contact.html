@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Contact Support
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block page_title %}
+Contact Support
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-container">
+
+    <!-- Header -->
+
+    <div class="contact-header">
+
+        <div>
+
+            <h2>
+
+                <i class="fa-solid fa-headset"></i>
+
+                Contact GlucoSense Support
+
+            </h2>
+
+            <p>
+
+                Need help with the GlucoSense Prediction System?
+                We're always here to help you.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Contact Grid -->
+
+    <div class="contact-grid">
+
+        <!-- Contact Information -->
+
+        <div class="contact-card">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Contact Information
+
+            </h2>
+
+            <div class="info-item">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    <div>
+
+        <h4>Email</h4>
+
+        <p>Email Support</p>
+
+    </div>
+
+</div>
+
+<div class="info-item">
+
+    <i class="fa-solid fa-phone"></i>
+
+    <div>
+
+        <h4>Phone</h4>
+
+        <p>+91 93737 XXXXX</p>
+
+    </div>
+
+</div>
+
+
+
+<div class="info-item">
+
+    <i class="fa-solid fa-location-dot"></i>
+
+    <div>
+
+        <h4>Location</h4>
+
+        <p>Zeal College of Engineering,
+Narhe, Pune,
+Maharashtra, India</p>
+
+    </div>
+
+</div>
+            <hr>
+
+            <h3 class="developer-title">
+
+                Developed By
+
+            </h3>
+
+            <div class="developer-box">
+
+                <div class="developer">
+
+                    <div class="avatar">
+
+                        A
+
+                    </div>
+
+                    <div>
+
+                        <h4>Asmita Nisad</h4>
+
+                        <p>Developer</p>
+
+                    </div>
+
+                </div>
+
+                <div class="developer">
+
+                    <div class="avatar">
+
+                        R
+
+                    </div>
+
+                    <div>
+
+                        <h4>Riya Randhe</h4>
+
+                        <p>Developer</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+
+        <div class="contact-card">
+
+            <h2>
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Message
+
+            </h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+
+                    <label>Your Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Subject</label>
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Message</label>
+
+                    <textarea
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+                {% if success %}
+
+                <div class="success-message">
+
+                    {{ success }}
+
+                </div>
+
+                {% endif %}
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Continue in Part 2 -->
+         <!-- Google Map -->
+
+    <div class="map-card">
+
+        <h2>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Our Location
+
+        </h2>
+
+        <iframe
+            src="https://www.google.com/maps?q=Pune&output=embed"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <!-- FAQ -->
+
+    <div class="faq-card">
+
+        <h2>
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            Frequently Asked Questions
+
+        </h2>
+
+        <div class="faq-item">
+
+            <h3>
+
+                How does the Health Assessment work?
+
+            </h3>
+
+            <p>
+
+                The AI model analyzes medical parameters like glucose,
+                BMI, insulin, blood pressure and other health values to
+                predict diabetes risk.
+
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+
+                Is my data secure?
+
+            </h3>
+
+            <p>
+
+                Yes. Your reports remain securely stored in your account
+                and are only accessible after login.
+
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+
+                Can I download my reports?
+
+            </h3>
+
+            <p>
+
+                Yes. Every prediction report can be downloaded as a PDF
+                and printed directly from the Result page.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

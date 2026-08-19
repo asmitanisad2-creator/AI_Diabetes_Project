@@ -1,0 +1,522 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GlucoSense Predictor</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shared-public.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="{% static 'js/theme.js' %}" defer></script><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet"></head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="shared-header">
+<nav class="shared-navbar">
+    <a href="{% url 'home' %}" class="shared-logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>GlucoSense</span>
+    </a>
+    <div class="shared-nav-links">
+        <a href="{% url 'home' %}" class="active-link">Home</a>
+        <a href="{% url 'home_about' %}" class="">About</a>
+        <a href="{% url 'home_contact' %}" class="">Contact</a>
+        <a href="{% url 'home_dashboard' %}" class="">Dashboard</a>
+    </div>
+    <div class="shared-nav-actions">
+        <button id="themeButton" class="shared-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+        <a href="{% url 'login' %}" class="shared-login">Login</a>
+        <a href="{% url 'register' %}" class="shared-register">Register</a>
+    </div>
+</nav>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+
+            Smart Health Platform
+
+        </span>
+
+        <h1>
+
+            Intelligent Diabetes Risk 
+            Prediction
+
+        </h1>
+
+        <p>
+
+            GlucoSense is a secure healthcare application
+            that helps estimate diabetes risk using Artificial
+            Intelligence and Machine Learning.
+
+            Create your account to receive a quick and reliable
+            diabetes risk assessment.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'register' %}" class="hero-btn">
+
+                Create Your Account
+
+            </a>
+
+            <a href="{% url 'login' %}" class="hero-btn secondary-btn">
+
+                Login
+
+            </a>
+
+        </div>
+
+        <a href="{% url 'quick_predict' %}" class="hero-check-risk">
+            <i class="fa-solid fa-stethoscope"></i>
+            Check Your Diabetes Risk
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+    src="{% static 'images/doctor.png' %}"
+    alt="Healthcare Illustration"
+    class="doctor-image">
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="features">
+
+    <h2>
+
+        Why Choose GlucoSense ?
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Fast, secure and intelligent diabetes risk assessment.
+
+    </p>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                ❤️‍🩹
+
+            </div>
+
+            <h3>
+
+                Health Assessment
+
+            </h3>
+
+            <p>
+
+                Machine Learning analyzes your health data
+                to estimate diabetes risk quickly and accurately.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                🔒
+
+            </div>
+
+            <h3>
+
+                Secure Data
+
+            </h3>
+
+            <p>
+
+                Your health information remains confidential
+                and is used only for prediction purposes.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+
+                ⚡
+
+            </div>
+
+            <h3>
+
+                Instant Results
+
+            </h3>
+
+            <p>
+
+                Get your GlucoSense Health within seconds
+                after submitting your health details.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= HEALTH TIPS ================= -->
+
+<section class="health-tips">
+
+    <h2>Healthy Lifestyle Tips</h2>
+
+    <p class="section-subtitle">
+        Small daily habits can help reduce the risk of diabetes and improve overall health.
+    </p>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+            <div class="tip-icon">🥗</div>
+            <h3>Healthy Diet</h3>
+            <p>
+                Eat balanced meals rich in vegetables, fruits, whole grains and lean protein.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🏃</div>
+            <h3>Stay Active</h3>
+            <p>
+                Exercise for at least 30 minutes daily to maintain a healthy lifestyle.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💧</div>
+            <h3>Stay Hydrated</h3>
+            <p>
+                Drink plenty of water throughout the day and reduce sugary beverages.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">😴</div>
+            <h3>Good Sleep</h3>
+            <p>
+                Get 7–8 hours of quality sleep every night for better overall health.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-home">
+
+    <div class="about-content">
+
+        <h2>About GlucoSense</h2>
+
+        <p>
+
+            GlucoSense is a web-based healthcare application
+            developed to estimate diabetes risk using Artificial Intelligence
+            and Machine Learning.
+
+        </p>
+
+        <p>
+
+            The system provides a quick, secure and user-friendly
+            prediction based on basic health parameters. It is intended
+            to support early health awareness and encourage timely
+            medical consultation.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= QUICK STATS ================= -->
+<section class="home-stats">
+    <div class="home-stat"><i class="fa-solid fa-bolt"></i><div><strong>Quick</strong><span>AI-assisted assessment</span></div></div>
+    <div class="home-stat"><i class="fa-solid fa-shield-halved"></i><div><strong>Secure</strong><span>Privacy-focused experience</span></div></div>
+    <div class="home-stat"><i class="fa-solid fa-chart-line"></i><div><strong>Insightful</strong><span>Clear prediction results</span></div></div>
+    <div class="home-stat"><i class="fa-solid fa-user-doctor"></i><div><strong>Awareness</strong><span>Supports early attention</span></div></div>
+</section>
+
+<!-- ================= COMMUNITY STATS ================= -->
+<section class="community-section">
+    <div class="community-heading">
+        <span>Growing Health Awareness</span>
+
+        <h2>A smarter way to understand your health</h2>
+
+        <p>
+            GlucoSense brings AI-assisted diabetes risk awareness
+            into one simple, secure experience.
+        </p>
+    </div>
+
+    <div class="community-grid">
+
+        <!-- Registered Users -->
+        <div class="community-card community-main">
+            <div class="community-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div class="community-content">
+                <strong class="community-number">10,000+</strong>
+                <span>Registered users</span>
+            </div>
+        </div>
+
+        <!-- Health Assessments -->
+        <div class="community-card">
+            <div class="community-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+            </div>
+
+            <div class="community-content">
+                <strong class="community-number">10,000+</strong>
+                <span>Health assessments</span>
+            </div>
+        </div>
+
+        <!-- AI Results -->
+        <div class="community-card">
+            <div class="community-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div class="community-content">
+                <strong class="community-number">Fast</strong>
+                <span>AI-assisted results</span>
+            </div>
+        </div>
+
+        <!-- Security -->
+        <div class="community-card">
+            <div class="community-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+
+            <div class="community-content">
+                <strong class="community-number">Secure</strong>
+                <span>Privacy-focused platform</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= QUICK PREDICTION ================= -->
+<section class="quick-predict-banner">
+    <div><span class="mini-label">NO LOGIN REQUIRED</span><h2>Want to check your risk right now?</h2><p>Use the quick prediction tool and explore your assessment in a few steps.</p></div>
+    <a href="{% url 'quick_predict' %}"><i class="fa-solid fa-stethoscope"></i> Start Prediction</a>
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+    <div class="circle-left"></div>
+    <div class="circle-right"></div>
+
+    <div class="cta-content">
+
+        <div class="cta-badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+             GLUCOSENSE
+        </div>
+
+        <h2>
+            Ready to Check Your <br>
+            Diabetes Risk?
+        </h2>
+
+        <p>
+            Register now and get your diabetes risk prediction in just a few seconds.
+        </p>
+
+        <div class="hero-buttons cta-buttons">
+
+            <a href="{% url 'register' %}" class="hero-btn">
+                Get Started
+            </a>
+
+            <a href="{% url 'login' %}" class="hero-btn secondary-btn">
+                Login
+            </a>
+
+        </div>
+
+       
+
+    </div>
+
+</section>
+
+
+<footer class="shared-footer">
+    <div class="shared-footer-grid">
+        <div class="shared-footer-brand">
+            <a href="{% url 'home' %}" class="shared-footer-logo"><i class="fa-solid fa-heart-pulse"></i><span>GlucoSense</span></a>
+            <p>Smart Diabetes Screening &amp; Patient Care Portal</p>
+            <div class="shared-footer-contact">
+                <p><i class="fa-solid fa-phone"></i> +91 93737 XXXXX</p>
+                <p><i class="fa-solid fa-envelope"></i> Email Support</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zeal College of Engineering, Narhe, Pune, Maharashtra, India</p>
+            </div>
+        </div>
+        <div class="shared-footer-column">
+            <h3>Quick Links</h3>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'home_about' %}">About</a>
+            <a href="{% url 'home_contact' %}">Contact</a>
+            <a href="{% url 'home_dashboard' %}">Dashboard</a>
+            <a href="{% url 'home_contact' %}" class="footer-message-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</a>
+        </div>
+        <div class="shared-footer-column">
+            <h3>Services</h3>
+            <a href="{% url 'quick_predict' %}"><i class="fa-solid fa-chart-line"></i> Diabetes Risk Prediction</a>
+            <a href="{% url 'home_dashboard' %}"><i class="fa-solid fa-heart-pulse"></i> Health Dashboard</a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-clock-rotate-left"></i> Prediction History</a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-shield-halved"></i> Secure Login</a>
+        </div>
+        
+        <div class="shared-footer-column shared-connect-column">
+            <h3>Connect With Us</h3>
+<p class="footer-connect-subtitle">GlucoSense Project Team</p>
+
+<div class="footer-people-row">
+
+    <!-- ================= ASMita ================= -->
+    <div class="footer-person">
+        <div class="footer-avatar">
+            <img src="{% static 'images/asmita-avatar.png' %}"
+                 alt="Asmita Misad avatar">
+        </div>
+
+        <h4>Asmita Misad</h4>
+
+        <div class="footer-socials">
+
+            <!-- GitHub Account -->
+            <a href="https://github.com/asmitanisad2-creator"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Asmita's GitHub"
+               title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- Common Gmail -->
+            <a href="mailto:glucosense.team@gmail.com"
+               aria-label="Email GlucoSense Team"
+               title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <!-- LinkedIn Account -->
+            <a href="https://www.linkedin.com/in/asmita-misad-b453313a1"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Asmita's LinkedIn"
+               title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- ================= RIYA ================= -->
+    <div class="footer-person footer-person-partner">
+
+        <div class="footer-avatar">
+            <img src="{% static 'images/riya-avatar.png' %}"
+                 alt="Riya Randhe avatar">
+        </div>
+
+        <h4>Riya Randhe</h4>
+
+        <div class="footer-socials">
+
+            <!-- Riya GitHub -->
+            <a href="https://github.com/RIYA_GITHUB_USERNAME"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Riya's GitHub"
+               title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- Common Gmail -->
+            <a href="mailto:glucosense.team@gmail.com"
+               aria-label="Email GlucoSense Team"
+               title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <!-- Riya LinkedIn -->
+            <a href="https://www.linkedin.com/in/riya-randhe-2659513a6"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Riya's LinkedIn"
+               title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+            </div></div>
+
+    </div>
+    <div class="shared-footer-bottom">
+        <span>© 2026 GlucoSense. All Rights Reserved.</span>
+
+         <div class="cta-developer-credit">
+            Developed by <strong>Asmita Misad</strong> &amp; <strong>Riya Randhe</strong>
+        </div>
+        <span>Designed for smarter health awareness.</span>
+    </div>
+</footer>

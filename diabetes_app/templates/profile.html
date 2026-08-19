@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block page_title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <!-- Profile Card -->
+
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+
+            {{ request.user.username|first|upper }}
+
+        </div>
+
+        <h2>{{ request.user.username|cut:"@gmail.com" }}</h2>
+
+        <p>{{ request.user.email }}</p>
+
+        <div class="status">
+
+            {% if latest %}
+
+                {% if latest.prediction == "Diabetic" %}
+
+                    <span class="danger">
+
+                        🔴 High Risk
+
+                    </span>
+
+                {% else %}
+
+                    <span class="healthy">
+
+                        🟢 Healthy
+
+                    </span>
+
+                {% endif %}
+
+            {% else %}
+
+                <span>No Predictions Yet</span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            <h3>Total Reports</h3>
+
+            <h1>{{ total }}</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-heart-circle-check"></i>
+
+            <h3>Healthy</h3>
+
+            <h1>{{ healthy }}</h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>High Risk</h3>
+
+            <h1>{{ high_risk }}</h1>
+
+        </div>
+
+    </div>
+
+    <!-- Account Information -->
+
+    <div class="info-card">
+
+        <h2>
+
+            <i class="fa-solid fa-user"></i>
+
+            Account Information
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div>
+
+                <span>Username</span>
+
+                <h4>{{ request.user.username|cut:"@gmail.com" }}</h4>
+
+            </div>
+
+            <div>
+
+                <span>Email</span>
+
+                <h4>{{ request.user.email }}</h4>
+
+            </div>
+
+            <div>
+
+                <span>Last Prediction</span>
+
+                {% if latest %}
+                    <h4>{{ latest.created_at|date:"d M Y" }}</h4>
+                {% else %}
+                    <h4>No Reports</h4>
+                {% endif %}
+
+            </div>
+
+            <div>
+
+                <span>Latest Status</span>
+
+                {% if latest %}
+                    <h4>{{ latest.prediction }}</h4>
+                {% else %}
+                    <h4>---</h4>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+<a href="{% url 'edit_profile' %}" class="btn">
+
+    <i class="fa-solid fa-user-pen"></i>
+
+    Edit Profile
+
+</a>
+
+<a href="{% url 'change_password' %}" class="btn">
+
+    <i class="fa-solid fa-key"></i>
+
+    Change Password
+
+</a>
+
+    <!-- Quick Actions -->
+
+    <div class="action-buttons">
+
+        <a href="{% url 'predict' %}" class="btn">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            New Prediction
+
+        </a>
+
+        <a href="{% url 'history' %}" class="btn">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            My Reports
+
+        </a>
+
+        <a href="{% url 'logout' %}" class="btn logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

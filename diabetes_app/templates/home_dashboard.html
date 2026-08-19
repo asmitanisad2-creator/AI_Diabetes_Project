@@ -1,0 +1,633 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | GlucoSense</title>
+
+    <link rel="stylesheet" href="{% static 'css/home_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shared-public.css' %}">
+<script src="{% static 'js/theme.js' %}" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="shared-header">
+<nav class="shared-navbar">
+    <a href="{% url 'home' %}" class="shared-logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>GlucoSense</span>
+    </a>
+    <div class="shared-nav-links">
+        <a href="{% url 'home' %}" class="">Home</a>
+        <a href="{% url 'home_about' %}" class="">About</a>
+        <a href="{% url 'home_contact' %}" class="">Contact</a>
+        <a href="{% url 'home_dashboard' %}" class="active-link">Dashboard</a>
+    </div>
+    <div class="shared-nav-actions">
+        <button id="themeButton" class="shared-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+        <a href="{% url 'login' %}" class="shared-login">Login</a>
+        <a href="{% url 'register' %}" class="shared-register">Register</a>
+    </div>
+</nav>
+</header>
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="dashboard-hero">
+
+    <div class="dashboard-hero-content">
+
+        <div class="dashboard-badge">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            SMART HEALTH DASHBOARD
+
+        </div>
+
+
+        <h1>
+
+            Keep Your Health Information
+
+            <span>
+                Organised in One Place
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            The GlucoSense dashboard helps users access
+            their diabetes risk results, review prediction
+            history, and manage their health information
+            through one simple platform.
+
+        </p>
+
+
+        <div class="dashboard-hero-buttons">
+
+            <a
+                href="{% url 'register' %}"
+                class="dashboard-primary-btn"
+            >
+
+                Create Your Account
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="{% url 'login' %}"
+                class="dashboard-secondary-btn"
+            >
+
+                Login to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard preview -->
+
+    <div class="dashboard-preview">
+
+
+        <div class="preview-top">
+
+            <div>
+
+                <p>
+                    Welcome Back
+                </p>
+
+                <h2>
+                    Your Health Overview
+                </h2>
+
+            </div>
+
+
+            <div class="preview-profile">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-cards">
+
+
+            <div class="preview-card">
+
+                <div class="preview-icon blue">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div>
+
+                    <small>
+                        Risk Assessment
+                    </small>
+
+                    <h3>
+                        Available
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="preview-card">
+
+                <div class="preview-icon green">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                </div>
+
+                <div>
+
+                    <small>
+                        Prediction History
+                    </small>
+
+                    <h3>
+                        View Records
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-chart">
+
+            <div class="chart-heading">
+
+                <div>
+
+                    <small>
+                        Health Overview
+                    </small>
+
+                    <h3>
+                        Track Your Progress
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+
+            <div class="chart-bars">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="dashboard-features">
+
+
+    <div class="dashboard-section-title">
+
+        <small>
+            DASHBOARD FEATURES
+        </small>
+
+        <h2>
+
+            Everything You Need in One Dashboard
+
+        </h2>
+
+        <p>
+
+            Easily access your health information and
+            manage your GlucoSense activity.
+
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-feature-grid">
+
+
+        <div class="dashboard-feature-card">
+
+            <div class="feature-icon blue">
+
+                <i class="fa-solid fa-notes-medical"></i>
+
+            </div>
+
+            <h3>
+                Risk Prediction
+            </h3>
+
+            <p>
+
+                Enter your health details and receive
+                a diabetes risk prediction result.
+
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-feature-card">
+
+            <div class="feature-icon green">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+            </div>
+
+            <h3>
+                Prediction History
+            </h3>
+
+            <p>
+
+                View and review your previous prediction
+                records in one place.
+
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-feature-card">
+
+            <div class="feature-icon purple">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <h3>
+                Secure Account
+            </h3>
+
+            <p>
+
+                Access your personal information through
+                a secure user account.
+
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-feature-card">
+
+            <div class="feature-icon orange">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+            <h3>
+                Health Awareness
+            </h3>
+
+            <p>
+
+                Understand your results and stay more
+                aware of your health information.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="dashboard-steps">
+
+
+    <div class="dashboard-section-title">
+
+        <small>
+            SIMPLE PROCESS
+        </small>
+
+        <h2>
+
+            Get Started in Three Easy Steps
+
+        </h2>
+
+    </div>
+
+
+    <div class="steps-container">
+
+
+        <div class="step">
+
+            <div class="step-number">
+
+                1
+
+            </div>
+
+            <h3>
+                Create an Account
+            </h3>
+
+            <p>
+
+                Register with GlucoSense to access
+                your personal health dashboard.
+
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+
+                2
+
+            </div>
+
+            <h3>
+                Enter Health Details
+            </h3>
+
+            <p>
+
+                Provide the required health information
+                for a diabetes risk assessment.
+
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+
+                3
+
+            </div>
+
+            <h3>
+                View Your Results
+            </h3>
+
+            <p>
+
+                Access your prediction result and
+                review your saved records.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="dashboard-cta">
+
+    <div>
+
+        <h2>
+
+            Ready to Explore Your Health Dashboard?
+
+        </h2>
+
+        <p>
+
+            Create your GlucoSense account and get started.
+
+        </p>
+
+    </div>
+
+
+    <a href="{% url 'register' %}">
+
+        Get Started
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="shared-footer">
+    <div class="shared-footer-grid">
+        <div class="shared-footer-brand">
+            <a href="{% url 'home' %}" class="shared-footer-logo"><i class="fa-solid fa-heart-pulse"></i><span>GlucoSense</span></a>
+            <p>Smart Diabetes Screening &amp; Patient Care Portal</p>
+            <div class="shared-footer-contact">
+                <p><i class="fa-solid fa-phone"></i> +91 93737 XXXXX</p>
+                <p><i class="fa-solid fa-envelope"></i> Email Support</p>
+                <p><i class="fa-solid fa-location-dot"></i> Zeal College of Engineering, Narhe, Pune, Maharashtra, India</p>
+            </div>
+        </div>
+        <div class="shared-footer-column">
+            <h3>Quick Links</h3>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'home_about' %}">About</a>
+            <a href="{% url 'home_contact' %}">Contact</a>
+            <a href="{% url 'home_dashboard' %}">Dashboard</a>
+            <a href="{% url 'home_contact' %}" class="footer-message-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</a>
+        </div>
+        <div class="shared-footer-column">
+            <h3>Services</h3>
+            <a href="{% url 'quick_predict' %}"><i class="fa-solid fa-chart-line"></i> Diabetes Risk Prediction</a>
+            <a href="{% url 'home_dashboard' %}"><i class="fa-solid fa-heart-pulse"></i> Health Dashboard</a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-clock-rotate-left"></i> Prediction History</a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-shield-halved"></i> Secure Login</a>
+        </div>
+        
+        <div class="shared-footer-column shared-connect-column">
+            <h3>Connect With Us</h3>
+            <p class="footer-connect-subtitle">GlucoSense Project Team</p>
+
+            <div class="footer-people-row">
+
+                <!-- ================= ASMita ================= -->
+    <div class="footer-person">
+        <div class="footer-avatar">
+            <img src="{% static 'images/asmita-avatar.png' %}"
+                 alt="Asmita Misad avatar">
+        </div>
+
+        <h4>Asmita Misad</h4>
+
+        <div class="footer-socials">
+
+            <!-- GitHub Account -->
+            <a href="https://github.com/asmitanisad2-creator"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Asmita's GitHub"
+               title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- Common Gmail -->
+            <a href="mailto:glucosense.team@gmail.com"
+               aria-label="Email GlucoSense Team"
+               title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <!-- LinkedIn Account -->
+            <a href="https://www.linkedin.com/in/asmita-misad-b453313a1"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Asmita's LinkedIn"
+               title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- ================= RIYA ================= -->
+    <div class="footer-person footer-person-partner">
+
+        <div class="footer-avatar">
+            <img src="{% static 'images/riya-avatar.png' %}"
+                 alt="Riya Randhe avatar">
+        </div>
+
+        <h4>Riya Randhe</h4>
+
+        <div class="footer-socials">
+
+            <!-- Riya GitHub -->
+            <a href="https://github.com/RIYA_GITHUB_USERNAME"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Riya's GitHub"
+               title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <!-- Common Gmail -->
+            <a href="mailto:glucosense.team@gmail.com"
+               aria-label="Email GlucoSense Team"
+               title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <!-- Riya LinkedIn -->
+            <a href="https://www.linkedin.com/in/riya-randhe-2659513a6"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Riya's LinkedIn"
+               title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+                    </div>
+                </div>
+
+            </div></div>
+
+    </div>
+    <div class="shared-footer-bottom">
+        <span>© 2026 GlucoSense. All Rights Reserved.</span>
+        <span>Designed for smarter health awareness.</span>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

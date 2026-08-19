@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+{% endblock %}
+
+{% block page_title %}
+Edit Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="edit-container">
+
+    <div class="edit-card">
+
+        <div class="avatar">
+
+            {{ request.user.username|first|upper }}
+
+        </div>
+
+        <h2>Edit Your Profile</h2>
+
+        <p>Update your account information below.</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="input-group">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    value="{{ request.user.username }}"
+                    required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    value="{{ request.user.email }}"
+                    required>
+
+            </div>
+
+            <div class="button-group">
+
+                <button type="submit" class="save-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Changes
+
+                </button>
+
+                <a href="{% url 'profile' %}" class="cancel-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Profile
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

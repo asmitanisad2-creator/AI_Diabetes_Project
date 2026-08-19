@@ -1,0 +1,149 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | GlucoSense Predictor</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="{% static 'js/theme.js' %}" defer></script>
+
+</head>
+
+<body>
+
+<button id="themeButton" class="login-theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+
+<div class="login-container">
+
+    <div class="login-left">
+        <img src="{% static 'images/.login-left img.png' %}" alt="GlucoSense healthcare portal">
+    </div>
+
+    <div class="login-right">
+
+        <div class="login-box">
+
+            <h1>Welcome to GlucoSense</h1>
+
+            <p class="subtitle">
+                Securely access your health records and diabetes screening reports.
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="{% url 'forgot_password' %}">
+                       Forgot Password?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="login-btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <a href="{% provider_login_url 'google' next='/dashboard/' %}"
+   class="social-login google-btn"
+   aria-label="Continue with Google">
+
+    <img src="https://developers.google.com/identity/images/g-logo.png"
+         width="20"
+         alt="Google">
+
+    <span>Continue with Google</span>
+
+</a>
+
+            <a href="{% provider_login_url 'github' next='/dashboard/' %}"
+   class="social-login github-btn"
+   aria-label="Continue with GitHub">
+
+    <i class="fa-brands fa-github"></i>
+
+    <span>Continue with GitHub</span>
+
+</a>
+                <a href="/accounts/oidc/linkedin/login/?next=/dashboard/"
+   class="social-login linkedin-btn"
+   aria-label="Continue with LinkedIn">
+
+    <i class="fa-brands fa-linkedin-in"></i>
+
+    <span>Continue with LinkedIn</span>
+
+</a>
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="{% url 'register' %}">
+
+                    Register
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block page_title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<div class="about-container">
+
+    <!-- Header -->
+
+    <div class="about-header">
+
+        <div>
+
+            <h2>
+                <i class="fa-solid fa-circle-info"></i>
+                About GlucoSense Patient Portal
+            </h2>
+
+            <p>
+                GlucoSense is a patient portal designed to help users monitor diabetes risk, maintain 
+                health records, and access personalized health recommendations in one secure
+                platform.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Welcome -->
+
+    <div class="about-card">
+
+        <h2>
+            <i class="fa-solid fa-heart-pulse"></i>
+            Welcome
+        </h2>
+
+        <p>
+            The GlucoSense Patient Portal is designed to help patients
+            monitor their diabetes screening records in a simple, secure,
+            and user-friendly environment. Patients can access their
+            prediction history, manage their profile, and download reports
+            whenever required.
+        </p>
+
+    </div>
+
+    <!-- Features -->
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <h3>New Prediction</h3>
+
+            <p>
+                Create a new GlucoSense Health using your health details.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-file-medical"></i>
+
+            <h3>Prediction History</h3>
+
+            <p>
+                View all your previous GlucoSense Health Reports.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-download"></i>
+
+            <h3>Download Reports</h3>
+
+            <p>
+                Download or print your reports anytime.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-user-pen"></i>
+
+            <h3>Manage Profile</h3>
+
+            <p>
+                Update your profile information and password securely.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Parameters -->
+
+    <div class="about-card">
+
+        <h2>
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+            Health Parameters Used
+
+        </h2>
+
+        <div class="parameter-grid">
+
+            <div>👶 Pregnancies</div>
+            <div>🩸 Glucose Level</div>
+            <div>❤️ Blood Pressure</div>
+            <div>📏 Skin Thickness</div>
+            <div>💉 Insulin Level</div>
+            <div>⚖️ Body Mass Index (BMI)</div>
+            <div>🧬 Diabetes Pedigree Function</div>
+            <div>🎂 Age</div>
+
+        </div>
+
+    </div>
+
+    <!-- Privacy -->
+
+    <div class="about-card">
+
+        <h2>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Privacy & Security
+
+        </h2>
+
+        <p>
+
+            Your personal information and prediction reports are securely
+            stored in your account. Only authenticated users can access
+            their health records.
+
+        </p>
+
+    </div>
+
+    <!-- Disclaimer -->
+
+    <div class="disclaimer">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <div>
+
+            <h3>Medical Disclaimer</h3>
+
+            <p>
+
+                The prediction provided by this portal is intended for
+                educational and screening purposes only. It should not
+                be considered a medical diagnosis. Please consult a
+                qualified healthcare professional for proper diagnosis
+                and treatment.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
