@@ -23,7 +23,29 @@
 <form method="POST" class="public-predict-card">{% csrf_token %}<div class="public-form-grid">
 <div><label>Patient Name</label><input name="name" required placeholder="Enter your name"></div>
 <div><label>Age</label><input type="number" name="age" min="1" max="120" required placeholder="Age"></div>
-<div><label>Pregnancies</label><input type="number" name="pregnancies" min="0" max="20" required placeholder="0"></div>
+
+<div>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+    </select>
+</div>
+
+<div id="public-pregnancies-field" hidden>
+    <label for="public-pregnancies">Pregnancies</label>
+    <input
+        type="number"
+        id="public-pregnancies"
+        name="pregnancies"
+        min="0"
+        max="20"
+        value="0"
+        placeholder="0"
+    >
+</div>
+
 <div><label>Glucose</label><input type="number" name="glucose" required placeholder="Glucose level"></div>
 <div><label>Blood Pressure</label><input type="number" name="blood_pressure" required placeholder="Blood pressure"></div>
 <div><label>Skin Thickness</label><input type="number" name="skin_thickness" required placeholder="Skin thickness"></div>
@@ -40,3 +62,28 @@
 <div class="shared-footer-column"><h3>Connect With Us</h3><a href="{% url 'home_contact' %}"><i class="fa-solid fa-paper-plane"></i> Send Message</a><a href="{% url 'home_contact' %}"><i class="fa-solid fa-envelope"></i> Email Us</a><a href="https://www.linkedin.com/in/asmita-misad-b453313a1" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="https://github.com/asmitanisad2-creator/AI_Diabetes_Project" target="_blank"><i class="fa-brands fa-github"></i> GitHub Project</a></div></div>
 <div class="shared-footer-bottom"><span>© 2026 GlucoSense. All Rights Reserved.</span><span>Designed for smarter health awareness.</span></div></footer>
 </body></html>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const gender = document.getElementById("gender");
+    const field = document.getElementById("public-pregnancies-field");
+    const pregnancies = document.getElementById("public-pregnancies");
+
+    function updatePregnancies() {
+        const isFemale = gender.value === "Female";
+
+        field.hidden = !isFemale;
+        pregnancies.required = isFemale;
+
+        if (!isFemale) {
+            pregnancies.value = "0";
+        }
+    }
+
+    gender.addEventListener("change", updatePregnancies);
+    updatePregnancies();
+});
+</script>
+</body>
+</html>

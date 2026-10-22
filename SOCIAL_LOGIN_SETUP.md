@@ -19,9 +19,9 @@ Create an OAuth app and use this callback:
 
 Set these environment variables before starting Django:
 
-`GITHUB_CLIENT_ID=...`
+`GITHUB_CLIENT_ID=Ov23lizwybTWtV7b7Vsy`
 
-`GITHUB_CLIENT_SECRET=...`
+`GITHUB_CLIENT_SECRET=ca7fd3bab97925ce47c12133c7449747a051bade`
 
 ## LinkedIn
 

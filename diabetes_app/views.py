@@ -375,32 +375,38 @@ def dashboard(request):
 
 # ---------------- LOGIN ----------------
 
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
+
 def login_user(request):
-
     if request.method == "POST":
+        email = request.POST.get("email", "").strip()
+        password = request.POST.get("password", "")
 
-        username = request.POST.get("email")
-        password = request.POST.get("password")
+        # Find the user using their email
+        from django.contrib.auth.models import User
 
-        user = authenticate(
-            request,
-            username=username,
-            password=password
-        )
+        try:
+            user_obj = User.objects.get(email__iexact=email)
+        except User.DoesNotExist:
+            user_obj = None
 
-        if user is not None:
+        if user_obj:
+            user = authenticate(
+                request,
+                username=user_obj.username,
+                password=password
+            )
 
-            login(request, user)
+            if user is not None:
+                login(request, user)
+                return redirect("dashboard")
 
-            return redirect("dashboard")
-
-        else:
-
-            messages.error(request, "Invalid Email or Password")
+        messages.error(request, "Invalid Email or Password")
 
     return render(request, "login.html")
-    return render(request, "account/login.html")
-
 # ---------------- REGISTER ----------------
 
 def register(request):

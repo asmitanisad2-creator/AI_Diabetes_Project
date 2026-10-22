@@ -7,6 +7,10 @@ New Prediction
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/predict.css' %}">
+<style>
+    /* Ensure the pregnancies field stays hidden even if predict.css sets display on .form-group. */
+    #pregnancies-field[hidden] { display: none !important; }
+</style>
 {% endblock %}
 
 {% block page_title %}
@@ -89,28 +93,27 @@ New GlucoSense Health
 
                 </div>
 
-                <!-- Pregnancies -->
+                <!-- Gender -->
+<div class="form-group">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+    </select>
+</div>
 
-                <div class="form-group">
-
-                    <label>
-
-                        <i class="fa-solid fa-person-pregnant"></i>
-
-                        Pregnancies
-
-                    </label>
-
-                    <input
-                        type="number"
-                        name="pregnancies"
-                        min="0"
-                        max="20"
-                        placeholder="0 - 20"
-                        required>
-
-                </div>
-
+<!-- Pregnancies: visible only for female -->
+<div class="form-group" id="pregnancies-field" hidden>
+    <label for="pregnancies">Pregnancies</label>
+    <input
+        type="number"
+        id="pregnancies"
+        name="pregnancies"
+        min="0"
+        value="0"
+    >
+</div>
                 <!-- Glucose -->
 
                 <div class="form-group">
@@ -301,6 +304,38 @@ New GlucoSense Health
 
     {% endif %}
 
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const gender = document.getElementById("gender");
+    const pregnanciesField = document.getElementById("pregnancies-field");
+    const pregnancies = document.getElementById("pregnancies");
+    const form = gender ? gender.closest("form") : null;
+
+    if (!gender || !pregnanciesField || !pregnancies) return;
+
+    function updatePregnanciesField() {
+        const isFemale = gender.value === "Female";
+        pregnanciesField.hidden = !isFemale;
+        pregnancies.required = isFemale;
+
+        if (!isFemale) {
+            pregnancies.value = "0";
+        }
+    }
+
+    gender.addEventListener("change", updatePregnanciesField);
+
+    if (form) {
+        form.addEventListener("reset", function () {
+            // Run after the browser resets the form controls.
+            setTimeout(updatePregnanciesField, 0);
+        });
+    }
+
+    updatePregnanciesField();
+});
+</script>
 </div>
 
 {% endblock %}
